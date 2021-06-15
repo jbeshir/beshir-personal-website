@@ -1,0 +1,10 @@
+---
+import deployConfig from '../../deploy-config.json';
+const gtmID = deployConfig['gtmID'];
+const gtmNSURL = "https://www.googletagmanager.com/ns.html?id=" + gtmID;
+---
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src={gtmNSURL}
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
