@@ -1,13 +1,9 @@
----
-import Tour from '../components/Tour.astro';
----
-
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Astro</title>
+    <title>JBeshir</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
@@ -21,18 +17,28 @@ import Tour from '../components/Tour.astro';
             gap: 1em;
             max-width: min(100%, 68ch);
         }
+
+        .profile-list {
+            line-height: 1.25em;
+            margin-top: 0.5em;
+        }
     </style>
 </head>
 <body>
     <main>
         <header>
             <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-                <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+                <img width="60" height="80" src="/assets/logo.svg" alt="Avatar">
+                <h1>JBeshir</h1>
             </div>
         </header>
 
-        <Tour />
+        <ul class="profile-list">
+            <li><a href="https://github.com/jbeshir/">GitHub</a></li>
+            <li><a href="https://www.metaculus.com/accounts/profile/100538/">Metaculus</a></li>
+            <li><a href="https://predictionbook.com/users/jbeshir">PredictionBook</a></li>
+            <li><a href="https://www.goodreads.com/user/show/48821743-john-beshir">Goodreads</a></li>
+        </ul>
     </main>
 </body>
 </html>
