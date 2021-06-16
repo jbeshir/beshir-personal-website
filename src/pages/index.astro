@@ -24,7 +24,11 @@ import AnalyticsBody from '../components/analytics-body.astro';
             max-width: min(100%, 68ch);
         }
 
-        .profile-list {
+        h2 {
+            margin-top: 0.5em;
+        }
+
+        .profile-list, .volunteering-list {
             line-height: 1.25em;
             margin-top: 0.5em;
         }
@@ -40,11 +44,17 @@ import AnalyticsBody from '../components/analytics-body.astro';
             </div>
         </header>
 
+        <h2>Profiles</h2>
         <ul class="profile-list">
             <li><a href="https://github.com/jbeshir/">GitHub</a></li>
             <li><a href="https://www.metaculus.com/accounts/profile/100538/">Metaculus</a></li>
             <li><a href="https://predictionbook.com/users/jbeshir">PredictionBook</a></li>
             <li><a href="https://www.goodreads.com/user/show/48821743-john-beshir">Goodreads</a></li>
+        </ul>
+
+        <h2>Volunteering</h2>
+        <ul class="volunteering-list">
+            <li><a href="https://www.vox.com/future-perfect/2019/2/21/18235136/vaccine-malaria-research-trials-volunteers">Vox: Malaria Challenge Trial</a></li>
         </ul>
     </main>
 </body>
