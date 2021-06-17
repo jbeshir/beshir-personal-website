@@ -9,6 +9,8 @@ export let content;
 <html>
 <head>
     <MainHead title={content.title} description={content.description} canonicalURL={Astro.request.canonicalURL} />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style/summaries.css">
     <style lang="scss">
       body {
