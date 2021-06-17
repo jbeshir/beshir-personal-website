@@ -10,7 +10,7 @@ categories:
 
 ([Single Page Edition](a-whirlwind-tour-of-lw-rationality-single-page-edition) of this document)
 
-(Feedback very welcome; I'm not the best writer, and contributions from anyone who has better ways to phrase things or even wants to rewrite entire sections are very welcome and I'd be happy to credit them. The best approach is probably to add comments to the source [Google Document](https://docs.google.com/document/d/1Ah2XW9vn_cbs4oWkKvWAaDKaeXDxdAMqnTb48qVLVWE/edit?usp=sharing), or email me if you want to clear a larger bit of work before starting. The email address is "john", at this website's domain, excluding the subdomain.)
+(Feedback very welcome; I'm not the best writer, and contributions from anyone who has better ways to phrase things or even wants to rewrite entire sections are very welcome and I'd be happy to credit them. The best approach is probably to add comments to the source [Google Document](https://docs.google.com/document/d/1Ah2XW9vn_cbs4oWkKvWAaDKaeXDxdAMqnTb48qVLVWE/edit?usp=sharing), or email me if you want to clear a larger bit of work before starting. The email address is "john", at this website's domain.)
 
 This is an attempt to summarise the propositions of the online ‘rationalist’ community, originally centred around [Overcoming Bias](http://www.overcomingbias.com/) and [LessWrong](http://lesswrong.com/), now largely dispersed to various communities and organisations like [Slatestarcodex](http://slatestarcodex.com/), the [Center for Applied Rationality](http://rationality.org/), the [Machine Intelligence Research Institute](https://intelligence.org/), and the [Effective Altruism](https://www.centreforeffectivealtruism.org/) movement, amongst others.
 
