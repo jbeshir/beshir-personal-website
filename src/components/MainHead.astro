@@ -1,6 +1,4 @@
 ---
-import AnalyticsHead from '../components/AnalyticsHead.astro';
-
 // props
 export let title: string;
 export let description: string;
@@ -40,5 +38,3 @@ export let canonicalURL: string | undefined;
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
 {image && (<meta name="twitter:image" content={image}>)}
-
-<AnalyticsHead />
