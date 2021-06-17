@@ -1,19 +1,12 @@
 ---
-import AnalyticsHead from '../components/analytics-head.astro';
-import AnalyticsBody from '../components/analytics-body.astro';
+import MainHead from '../components/MainHead.astro';
+import AnalyticsBody from '../components/AnalyticsBody.astro';
 ---
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JBeshir</title>
+    <MainHead title="JBeshir" description="JBeshir's Personal Site" canonicalURL={Astro.request.canonicalURL} />
 
-    <AnalyticsHead />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-    <link rel="stylesheet" href="/style/global.css">
     <link rel="stylesheet" href="/style/home.css">
 
     <style>
@@ -28,6 +21,25 @@ import AnalyticsBody from '../components/analytics-body.astro';
             margin-top: 0.5em;
         }
 
+        .logo {
+            font-size: clamp(2rem, -0.4742rem + 6.1856vw, 2.75rem);
+        }
+
+        .logo > a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo > a > h1 {
+            font-size: 1em;
+        }
+
+        .logo > a > img {
+             width: 2em;
+             height: 2.667em;
+         }
+
         .contest-list, .profile-list, .volunteering-list {
             line-height: 1.25em;
             margin-top: 0.5em;
@@ -36,14 +48,15 @@ import AnalyticsBody from '../components/analytics-body.astro';
 </head>
 <body>
     <AnalyticsBody />
-    <main>
-        <header>
-            <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Avatar">
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img width="60" height="80" src="/assets/logo.svg" alt="avatar">
                 <h1>JBeshir</h1>
-            </div>
-        </header>
-
+            </a>
+        </div>
+    </header>
+    <main>
         <h2>Profiles</h2>
         <ul class="profile-list">
             <li><a href="https://github.com/jbeshir/">GitHub</a></li>
