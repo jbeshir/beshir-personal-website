@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/summary.astro
-title: "A Whirlwind Tour of LW Rationality: 6 Books in 32 Pages - Map And Territory"
+title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages - Map And Territory"
 date: "2016-07-09"
 categories: 
   - "rationality"
 ---
 
-[(Back to Introduction)](a-whirlwind-tour-of-lw-rationality-6-books-in-32-pages-introduction)
+[(Back to Introduction)](a-whirlwind-tour-of-lw-rationality-introduction)
 
 ### Map and Territory A: Predictably Wrong
 
@@ -76,4 +76,4 @@ Eliezer failed at this in his earlier days, despite knowing to reject the standa
 
 Explanations like ‘Science’ can serve as curiosity-stoppers, by telling us that someone else knows the answer. (["Science" As Curiosity-Stopper](http://lesswrong.com/lw/j3/science_as_curiositystopper/))
 
-[(Continue with "How To Actually Change Your Mind")](a-whirlwind-tour-of-lw-rationality-6-books-in-32-pages-how-to-actually-change-your-mind)
+[(Continue with "How To Actually Change Your Mind")](a-whirlwind-tour-of-lw-rationality-how-to-actually-change-your-mind)

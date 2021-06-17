@@ -3,10 +3,10 @@ layout: ../../layouts/summary.astro
 title: "Summary of the Luminosity Sequence"
 date: "2017-05-30"
 categories: 
-  - "uncategorised"
+  - "rationality"
 ---
 
-([Original Document](https://docs.google.com/a/beshir.org/document/d/1cE7BzQGljKfYAs-OJ5Q7lb68m8e2iz4tqCDsk5Cswno/edit?usp=drive_web) here, open to comments.)
+([Original Document](https://docs.google.com/document/d/1cE7BzQGljKfYAs-OJ5Q7lb68m8e2iz4tqCDsk5Cswno/edit?usp=sharing) here, open to comments.)
 
 _Luminosity_ is self-awareness. Emotions, beliefs, aliefs, dispositions, and memories are _luminous_ if you are aware of them. Most people cannot describe what is going on in their head, either at any particular moment or over time, and cannot predict their future actions well. ([_Living Luminously_](http://lesswrong.com/lw/1xh/living_luminously/))
 

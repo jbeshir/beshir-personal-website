@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/summary.astro
-title: "A Whirlwind Tour of LW Rationality: 6 Books in 32 Pages - Mere Reality"
+title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages - Mere Reality"
 date: "2016-07-09"
 categories: 
   - "rationality"
 ---
 
-[(Back to "The Machine In The Ghost")](a-whirlwind-tour-of-lw-rationality-6-books-in-32-pages-the-machine-in-the-ghost)
+[(Back to "The Machine In The Ghost")](a-whirlwind-tour-of-lw-rationality-the-machine-in-the-ghost)
 
 ### Mere Reality O: Lawful Truth
 
@@ -96,4 +96,4 @@ The bulk of work in progressing knowledge is in elevating the right hypotheses t
 
 We do not use the evidence of sensory data anywhere near optimally. ([That Alien Message](http://lesswrong.com/lw/qk/that_alien_message/)) Possible minds can be extremely smarter than humans. Basing your ideals on hypothetical extremely intelligent minds, rather than merely the best humans so far, helps you not shy away from trying to exceed them. ([My Childhood Role Model](http://lesswrong.com/lw/ql/my_childhood_role_model/))
 
-[(Continue with "Mere Goodness")](a-whirlwind-tour-of-lw-rationality-6-books-in-32-pages-mere-goodness)
+[(Continue with "Mere Goodness")](a-whirlwind-tour-of-lw-rationality-mere-goodness)

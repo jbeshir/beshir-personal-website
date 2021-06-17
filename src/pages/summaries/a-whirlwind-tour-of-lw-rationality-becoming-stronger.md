@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/summary.astro
-title: "A Whirlwind Tour of LW Rationality: 6 Books in 32 Pages - Becoming Stronger"
+title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages - Becoming Stronger"
 date: "2016-07-09"
 categories: 
   - "rationality"
 ---
 
-[(Back to "Mere Goodness")](a-whirlwind-tour-of-lw-rationality-6-books-in-32-pages-mere-goodness)
+[(Back to "Mere Goodness")](a-whirlwind-tour-of-lw-rationality-mere-goodness)
 
 ### Becoming Stronger X: Yudkowsky’s Coming Of Age
 
