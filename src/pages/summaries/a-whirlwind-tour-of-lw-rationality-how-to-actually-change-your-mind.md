@@ -6,7 +6,7 @@ categories:
   - "rationality"
 ---
 
-[(Back to "Map And Territory")](a-whirlwind-tour-of-lw-rationality-map-and-territory)
+[(Back to "Map And Territory")](/summaries/a-whirlwind-tour-of-lw-rationality-map-and-territory)
 
 ### How To Actually Change Your Mind E: Overly Convenient Excuses
 
@@ -136,4 +136,4 @@ When you have a cherished belief, ask yourself what you would do, assuming that 
 
 When you are invested heavily and emotionally in a long-lived belief which is surrounded by arguments and refutations, it can be desirable to attempt to instigate a real crisis of faith about it, one that could go either way, as it will take more than an ordinary effort to displace if false. ([Crisis Of Faith](http://lesswrong.com/lw/ur/crisis_of_faith/), [The Ritual](http://lesswrong.com/lw/us/the_ritual/))
 
-[(Continue with "The Machine In The Ghost")](a-whirlwind-tour-of-lw-rationality-the-machine-in-the-ghost)
+[(Continue with "The Machine In The Ghost")](/summaries/a-whirlwind-tour-of-lw-rationality-the-machine-in-the-ghost)

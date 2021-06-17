@@ -6,7 +6,7 @@ categories:
   - "rationality"
 ---
 
-[(Back to "Mere Goodness")](a-whirlwind-tour-of-lw-rationality-mere-goodness)
+[(Back to "Mere Goodness")](/summaries/a-whirlwind-tour-of-lw-rationality-mere-goodness)
 
 ### Becoming Stronger X: Yudkowsky’s Coming Of Age
 

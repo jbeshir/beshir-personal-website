@@ -8,7 +8,7 @@ categories:
 
 ([Base PDF Version](/releases/writing/AWhirlwindTourOfLWRationality.pdf), Current Version 1.0.0, 32 page count does not include the title and introduction.)
 
-([Single Page Edition](a-whirlwind-tour-of-lw-rationality-single-page-edition) of this document)
+([Single Page Edition](/summaries/a-whirlwind-tour-of-lw-rationality-single-page-edition) of this document)
 
 (Feedback very welcome; I'm not the best writer, and contributions from anyone who has better ways to phrase things or even wants to rewrite entire sections are very welcome and I'd be happy to credit them. The best approach is probably to add comments to the source [Google Document](https://docs.google.com/document/d/1Ah2XW9vn_cbs4oWkKvWAaDKaeXDxdAMqnTb48qVLVWE/edit?usp=sharing), or email me if you want to clear a larger bit of work before starting. The email address is "john", at this website's domain.)
 
@@ -33,4 +33,4 @@ So, roughly a mixture of analytic philosophy and pop cognitive science. The basi
 
 Some parts of these are relatively well accepted; others proved controversial with the community. The tour follows, roughly a page per sequence, using the book’s ordering of the sequences.
 
-[(Continue with "Map And Territory")](a-whirlwind-tour-of-lw-rationality-map-and-territory)
+[(Continue with "Map And Territory")](/summaries/a-whirlwind-tour-of-lw-rationality-map-and-territory)

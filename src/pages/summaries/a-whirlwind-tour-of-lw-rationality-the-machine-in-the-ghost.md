@@ -6,7 +6,7 @@ categories:
   - "rationality"
 ---
 
-[(Back to "How To Actually Change Your Mind")](a-whirlwind-tour-of-lw-rationality-how-to-actually-change-your-mind)
+[(Back to "How To Actually Change Your Mind")](/summaries/a-whirlwind-tour-of-lw-rationality-how-to-actually-change-your-mind)
 
 ### The Machine In The Ghost L: The Simple Math of Evolution
 
@@ -82,4 +82,4 @@ If there is a great deal of mutual information remaining between attributes afte
 
 Words can be defined wrongly, in many ways. ([37 Ways That Words Can Be Wrong](http://lesswrong.com/lw/od/37_ways_that_words_can_be_wrong/))
 
-[(Continue with "Mere Reality")](a-whirlwind-tour-of-lw-rationality-mere-reality)
+[(Continue with "Mere Reality")](/summaries/a-whirlwind-tour-of-lw-rationality-mere-reality)

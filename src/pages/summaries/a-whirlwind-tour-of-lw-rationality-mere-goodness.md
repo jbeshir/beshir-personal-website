@@ -6,7 +6,7 @@ categories:
   - "rationality"
 ---
 
-[(Back to "Mere Reality")](a-whirlwind-tour-of-lw-rationality-mere-reality)
+[(Back to "Mere Reality")](/summaries/a-whirlwind-tour-of-lw-rationality-mere-reality)
 
 ### Mere Goodness U: Fake Preferences
 
@@ -46,4 +46,4 @@ _Ends don’t justify the means among humans_. We run on _corrupted hardware_; w
 
 To pursue rationality effectively, you must have a higher goal that it serves. ([Something To Protect](http://lesswrong.com/lw/nb/something_to_protect/)) _Newcomb’s problem_ is a scenario in which an entity that can predict you perfectly offers two boxes, and says that box A contains $1000, and box B contains $1,000,000 if and only if they predicted you would only take box B. Traditional causal decision theory says you should take both boxes, as the money is either already in the box or not. Rationally, you should take only box B. Doing so makes you win more, and _rationality is about winning_, not about reasonableness or any particular ritual of thought. ([Newcomb's Problem And Regret Of Rationality](http://lesswrong.com/lw/nc/newcombs_problem_and_regret_of_rationality/))
 
-[(Continue with "Becoming Stronger")](a-whirlwind-tour-of-lw-rationality-becoming-stronger)
+[(Continue with "Becoming Stronger")](/summaries/a-whirlwind-tour-of-lw-rationality-becoming-stronger)
