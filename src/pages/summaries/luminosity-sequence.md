@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/summary.astro
 title: "Summary of the Luminosity Sequence"
+description: "A summary of the Luminosity blog series on self-awareness from LessWrong."
 date: "2017-05-30"
 categories: 
   - "rationality"

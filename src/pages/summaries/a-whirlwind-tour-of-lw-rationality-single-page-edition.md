@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/summary.astro
 title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages - Single Page Edition"
+subpost: "true"
 date: "2016-07-09"
 categories: 
   - "rationality"
@@ -8,7 +9,7 @@ categories:
 
 ([Base PDF Version](/releases/writing/AWhirlwindTourOfLWRationality.pdf), Current Version 1.0.0, 32 page count does not include the title and introduction.)
 
-([Split Version](/summaries/a-whirlwind-tour-of-lw-rationality-introduction) of this tour, spread over seven shorter posts, for people who don't like scrolling or want to be able to more easily link to parts of it)
+([Split Version](/summaries/a-whirlwind-tour-of-lw-rationality) of this tour, spread over seven shorter posts, for people who don't like scrolling or want to be able to more easily link to parts of it)
 
 (Feedback very welcome; I'm not the best writer, and contributions from anyone who has better ways to phrase things or even wants to rewrite entire sections are very welcome and I'd be happy to credit them. The best approach is probably to add comments to the source [Google Document](https://docs.google.com/document/d/1Ah2XW9vn_cbs4oWkKvWAaDKaeXDxdAMqnTb48qVLVWE/edit?usp=sharing), or email me if you want to clear a larger bit of work before starting. The email address is "john", at this website's domain, excluding the subdomain.)
 

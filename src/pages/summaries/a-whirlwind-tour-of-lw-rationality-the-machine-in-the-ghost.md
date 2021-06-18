@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/summary.astro
 title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages - The Machine In The Ghost"
+subpost: "true"
 date: "2016-07-09"
 categories: 
   - "rationality"
@@ -14,7 +15,7 @@ There are things which look purposeful in nature, which people historically trea
 
 If evolution were able to explain anything, it would be useless. Evolution is consistent only with the kind of purposefulness which propagates a gene, with no filtering for kindness or any other kind of purposefulness. This is the kind of alien purposefulness we observe in nature. ([An Alien God](http://lesswrong.com/lw/kr/an_alien_god/))
 
-Evolution works incrementally. ([The Wonder Of Evolution](http://lesswrong.com/lw/ks/the_wonder_of_evolution/)) Evolution is slow; a mutation multiplying the expected number of children by 1.03 has a 6% chance of reaching fixation, and takes an average of 768 generations to reach universality within a population of 100,000. The general formulae are 2 **s** for the chance of fixation, and 2 ln(**N**) / **s** for number of generations, where **N** is the population size, and **s** is the multiplier minus 1. Complex mutations take a very long time, as each step must reach fixation. ([Evolutions Are Stupid (But Work Anyway)](http://lesswrong.com/lw/kt/evolutions_are_stupid_but_work_anyway/))
+Evolution works incrementally. ([The Wonder Of Evolution](http://lesswrong.com/lw/ks/the_wonder_of_evolution/)) Evolution is slow; a mutation multiplying the expected number of children by 1.03 has a 6% chance of reaching fixation, and takes an average of 768 generations to reach universality within a population of 100,000. The general formulae are 2**s** for the chance of fixation, and 2 ln(**N**) / **s** for number of generations, where **N** is the population size, and **s** is the multiplier minus 1. Complex mutations take a very long time, as each step must reach fixation. ([Evolutions Are Stupid (But Work Anyway)](http://lesswrong.com/lw/kt/evolutions_are_stupid_but_work_anyway/))
 
 Price’s Equation is a very general equation stating that the change in average characteristic is equal to the covariance of the characteristic and relative fitness. It operates only to the extent that characteristics are heritable across the generations. If characteristics aren’t passed down more than a few generations, you will only ever observe a few generations’ worth of selective pressure.
 

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/summary.astro
 title: "A Summary of The Power of Habit"
+description: "A summary of the 2012 book by Charles Duhigg."
 date: "2016-08-30"
 categories: 
   - "uncategorised"

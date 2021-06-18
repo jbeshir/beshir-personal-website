@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/summary.astro
-title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages - Introduction"
+title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages"
+description: "A summary of the main blog series on rationality from LessWrong."
 date: "2016-07-09"
 categories: 
   - "rationality"

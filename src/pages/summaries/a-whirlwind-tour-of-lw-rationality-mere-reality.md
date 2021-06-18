@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/summary.astro
 title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages - Mere Reality"
+subpost: "true"
 date: "2016-07-09"
 categories: 
   - "rationality"

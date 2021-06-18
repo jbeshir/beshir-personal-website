@@ -1,0 +1,39 @@
+---
+export let prevUrl: string;
+export let nextUrl: string;
+---
+
+<style lang="scss">
+  .nav {
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .prev,
+  .next {
+    flex: 1;
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+
+    &[href="#"] {
+      display: none;
+    }
+  }
+
+  .prev {
+    margin-right: auto;
+  }
+
+  .next {
+    margin-left: auto;
+  }
+</style>
+
+<div class="wrapper">
+    <nav class="nav">
+        <a class="prev" href={prevUrl || '#'} aria-label="Previous Page">Prev Page</a>
+        <a class="next" href={nextUrl || '#'} aria-label="Next Page">Next Page</a>
+    </nav>
+</div>
