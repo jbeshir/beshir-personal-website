@@ -43,7 +43,7 @@ export let content;
         margin-top: 4rem;
         margin-bottom: 6rem;
 
-        :global(p), :global(ul), :global(h3) {
+        :global(p), :global(>ul), :global(h3) {
           line-height: 2;
           margin-top: 2em;
           margin-bottom: 2em;
@@ -51,11 +51,16 @@ export let content;
         :global(li) {
           margin-bottom: 0.6em;
         }
-        :global(p), :global(ul) {
-          font-size: 1.3em;
+        :global(p), :global(> ul) {
+          font-size: 1.3rem;
         }
         :global(h3) {
-          font-size: 1.5em;
+          font-size: 1.5rem;
+        }
+        :global(li > ul) {
+          margin-top: 0.8em;
+          margin-bottom: 1.2em;
+          font-size: 0.9em;
         }
       }
 
