@@ -1,12 +1,5 @@
 ---
-// props
-export let title: string;
-export let description: string;
-export let image: string | undefined;
-export let type: string | undefined;
-export let next: string | undefined;
-export let prev: string | undefined;
-export let canonicalURL: string | undefined;
+const { canonicalURL, prev, next, type, image, description, title } = Astro.props;
 ---
 
 <!-- Common -->

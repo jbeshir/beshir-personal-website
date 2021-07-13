@@ -1,5 +1,10 @@
 ---
-import deployConfig from '../../deploy-config.json';
+import fs from 'node:fs/promises';
+
+const url = new URL('../../deploy-config.json', import.meta.url);
+const json = await fs.readFile(url, 'utf-8');
+const deployConfig = JSON.parse(json);
+
 const gtmID = deployConfig['gtmID'];
 const gtmNSURL = "https://www.googletagmanager.com/ns.html?id=" + gtmID;
 ---
