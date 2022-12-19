@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/summary.astro
-title: "A Whirlwind Tour of LW Rationality: 6&nbsp;Books in 32 Pages - The Machine In The Ghost"
+title: "A Whirlwind Tour of LW Rationality: 6 Books in 32 Pages - The Machine In The Ghost"
 subpost: "true"
 date: "2016-07-09"
 categories: 

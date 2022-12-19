@@ -7,9 +7,13 @@
     "build": "astro build"
   },
   "devDependencies": {
-    "@astrojs/renderer-react": "^0.1.2",
-    "astro": "^0.17.2",
+    "@astrojs/react": "^1.2.2",
+    "astro": "^1.7.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sass": "^1.57.0"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^1.0.0"
   }
 }
