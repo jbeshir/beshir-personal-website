@@ -9,7 +9,7 @@ const gtmID = deployConfig['gtmID'];
 ---
 
 <!-- Google Tag Manager -->
-<gtm data-gtmid={gtmID} />
+<gtm-tag data-gtmid={gtmID}></gtm-tag>
 <script>
 	class GTMElement extends HTMLElement {
 		constructor() {
@@ -23,6 +23,6 @@ const gtmID = deployConfig['gtmID'];
 		}
 	}
 
-	customElements.define('gtm', GTMElement);
+	customElements.define('gtm-tag', GTMElement);
 </script>
 <!-- End Google Tag Manager -->
