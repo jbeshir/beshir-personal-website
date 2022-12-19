@@ -46,10 +46,10 @@ return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove ev
 <a class="post" href={post.url}>
 
     <div class="data">
-        <h2>{post.title}</h2>
-        <time class="date" datetime={post.date}>{formatDate(post.date)}</time>
+        <h2>{post.frontmatter.title}</h2>
+        <time class="date" datetime={post.frontmatter.date}>{formatDate(post.frontmatter.date)}</time>
         <p class="description">
-            {post.description}
+            {post.frontmatter.description}
         </p>
     </div>
 </a>
