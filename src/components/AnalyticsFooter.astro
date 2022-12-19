@@ -1,7 +1,7 @@
 ---
 import fs from 'node:fs/promises';
 
-const url = new URL('../../deploy-config.json', import.meta.url);
+const url = new URL('../deploy-config.json', import.meta.url);
 const json = await fs.readFile(url, 'utf-8');
 const deployConfig = JSON.parse(json);
 
