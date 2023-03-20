@@ -1,0 +1,68 @@
+---
+import MainHead from '../../components/MainHead.astro';
+import TechnicalNav from '../../components/TechnicalNav.astro';
+import PostLink from '../../components/PostLink.astro';
+import Pagination from '../../components/Pagination.astro';
+import AnalyticsFooter from '../../components/AnalyticsFooter.astro';
+
+// Metadata
+let title = 'Technical Posts';
+let description = 'Short posts about tools and technologies';
+let canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Pagination paths and data source
+export async function getStaticPaths({paginate}) {
+	let allPosts = await Astro.glob('./*.md');
+	allPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+	allPosts = allPosts.filter((post) => post.frontmatter.subpost !== "true");
+	return paginate(allPosts, {pageSize: 50});
+};
+
+const { page } = Astro.props;
+
+---
+
+<html>
+<head>
+    <title>{title}</title>
+    <MainHead
+            title={title}
+            description={description}
+            image={page.data[0].image}
+            canonicalURL={canonicalURL}
+            prev={page.url.prev}
+            next={page.url.next}
+    >
+
+    <style lang="scss">
+      .title {
+        font-size: 3em;
+        letter-spacing: -0.04em;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        text-align: center;
+      }
+
+      .count {
+        font-size: 1em;
+        display: block;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+<TechnicalNav />
+
+<main class="wrapper">
+    <h2 class="title">All Posts</h2>
+    <small class="count">{page.start + 1}–{page.end + 1} of {page.total}</small>
+    {page.data.map((post) => <PostLink post={post} />)}
+</main>
+
+<footer>
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+</footer>
+</body>
+<AnalyticsFooter />
+</html>
