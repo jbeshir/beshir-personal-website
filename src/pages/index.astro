@@ -2,6 +2,8 @@
 import MainHead from '../components/MainHead.astro';
 import AnalyticsBody from '../components/AnalyticsBody.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
+import {Image} from "astro:assets";
+import avatar from '../assets/avatar.png'
 ---
 <!doctype html>
 <html lang="en">
@@ -56,7 +58,7 @@ import AnalyticsFooter from '../components/AnalyticsFooter.astro';
     <header>
         <div class="logo">
             <a href="/">
-                <img width="240" height="240" src="/assets/logo.svg" alt="avatar">
+                <Image width="240" height="240" src={avatar} alt="avatar" />
                 <h1>JBeshir</h1>
             </a>
         </div>
