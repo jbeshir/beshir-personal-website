@@ -12,11 +12,11 @@ let canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Pagination paths and data source
 export async function getStaticPaths({paginate}) {
-	let allPosts = await Astro.glob('./*.md');
-	allPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
-	allPosts = allPosts.filter((post) => post.frontmatter.subpost !== "true");
-	return paginate(allPosts, {pageSize: 50});
-};
+    let posts = Object.values(import.meta.glob('./*.md', {eager: true}));
+    posts = posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+    posts = posts.filter((post) => post.frontmatter.subpost !== "true");
+    return paginate(posts, {pageSize: 50});
+}
 
 const { page } = Astro.props;
 
