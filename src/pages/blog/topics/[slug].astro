@@ -1,0 +1,69 @@
+---
+import MainHead from '../../../components/MainHead.astro';
+import BlogNav from '../../../components/BlogNav.astro';
+import PostLink from '../../../components/PostLink.astro';
+import AnalyticsFooter from '../../../components/AnalyticsFooter.astro';
+import '@fontsource/spectral/700.css';
+
+export async function getStaticPaths() {
+  let posts = Object.values(import.meta.glob('../*.md', { eager: true }));
+  posts = posts.filter((post) => post.frontmatter.subpost !== 'true');
+  posts = posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+
+  const bySlug = new Map(); // slug -> { label, posts: [] }
+  for (const post of posts) {
+    const cats = Array.isArray(post.frontmatter.categories) ? post.frontmatter.categories : [];
+    for (const c of cats) {
+      const slug = String(c).toLowerCase().replaceAll('_', '-');
+      const label = String(c).replaceAll('_', ' ');
+      if (!bySlug.has(slug)) bySlug.set(slug, { label, posts: [] });
+      bySlug.get(slug).posts.push(post);
+    }
+  }
+  return Array.from(bySlug.entries()).map(([slug, { label, posts }]) => ({
+    params: { slug },
+    props: { label, posts },
+  }));
+}
+
+const { label, posts } = Astro.props;
+const title = `Topic: ${label}`;
+const description = `Posts about ${label} — writing on technology, self-improvement, and rationality.`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<html>
+<head>
+    <MainHead title={title} description={description} canonicalURL={canonicalURL} />
+    <link rel="stylesheet" href="/style/blog.css">
+    <style lang="scss">
+      .title {
+        font-family: 'Spectral', serif;
+        font-weight: 700;
+        font-size: 3em;
+        letter-spacing: -0.04em;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        text-align: center;
+        color: var(--accent);
+      }
+      .count {
+        font-size: 1em;
+        display: block;
+        text-align: center;
+        color: var(--muted);
+        margin-top: 0.4rem;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+</head>
+<body>
+<BlogNav />
+<main class="wrapper">
+    <h2 class="title">{title}</h2>
+    <small class="count">{posts.length} post{posts.length === 1 ? '' : 's'}</small>
+    {posts.map((post) => <PostLink post={post} />)}
+</main>
+<footer></footer>
+</body>
+<AnalyticsFooter />
+</html>

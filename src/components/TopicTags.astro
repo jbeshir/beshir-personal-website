@@ -1,0 +1,31 @@
+---
+const { categories } = Astro.props;
+const cats = Array.isArray(categories) ? categories : [];
+const chips = cats.map((c) => ({
+  slug: String(c).toLowerCase().replaceAll('_', '-'),
+  label: String(c).replaceAll('_', ' '),
+}));
+---
+{chips.length > 0 && (
+  <ul class="topics">
+    {chips.map((c) => (
+      <li><a class="topic-chip" href={`/blog/topics/${c.slug}/`}>{c.label}</a></li>
+    ))}
+  </ul>
+)}
+<style lang="scss">
+  .topics {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .topic-chip {
+    display: inline-block;
+    /* full visual theming (colors/border/hover) lives in public/style/blog.css .topic-chip;
+       keep only layout fallbacks here */
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/technical.astro
+layout: ../../layouts/blog.astro
 title: "Inoculation against architecture fads"
 description: "Keeping your head when everyone is telling you that you need to be in on the next big thing"
 date: "2025-12-11"

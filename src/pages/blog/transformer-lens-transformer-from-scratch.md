@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/technical.astro
+layout: ../../layouts/blog.astro
 title: "Transformer Lens: Building a transformer from scratch for interpretability"
 description: "A first experience with PyTorch and building a transformer for interpretability"
 date: "2023-10-08"

@@ -1,7 +1,8 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import TechnicalNav from '../components/TechnicalNav.astro';
+import BlogNav from '../components/BlogNav.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
+import TopicTags from '../components/TopicTags.astro';
 import '@fontsource/spectral/400.css';
 import '@fontsource/spectral/400-italic.css';
 import '@fontsource/spectral/700.css';
@@ -13,18 +14,30 @@ const { content } = Astro.props;
 <html>
 <head>
     <MainHead title={content.title} description={content.description} canonicalURL={Astro.request.canonicalURL} />
-    <link rel="stylesheet" href="/style/technical.css">
+    <link rel="stylesheet" href="/style/blog.css">
     <style lang="scss">
       body {
         font-family: 'Spectral', serif;
       }
 
+      /* narrow the reading column to ~42rem for comfortable measure */
+      .wrapper {
+        max-width: 42rem;
+      }
+
       .title {
-        margin-top: 4rem;
-        margin-bottom: 4rem;
-        font-size: 3em;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 2.6em;
         letter-spacing: -0.04em;
         text-align: center;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      /* breathing room between title and topic chips */
+      :global(.topics) {
+        margin-bottom: 2rem;
       }
 
       .img {
@@ -34,7 +47,7 @@ const { content } = Astro.props;
       }
 
       .article {
-        margin-top: 4rem;
+        margin-top: 2rem;
         margin-bottom: 6rem;
 
         :global(p), :global(>ul), :global(h3) {
@@ -56,10 +69,41 @@ const { content } = Astro.props;
           margin-bottom: 1.2em;
           font-size: 0.9em;
         }
+
+        /* inline code */
+        :global(code) {
+          background: var(--bg-panel);
+          border: 1px solid var(--border);
+          border-radius: 4px;
+          padding: 0.1em 0.35em;
+          font-size: 0.875em;
+        }
+
+        /* code blocks */
+        :global(pre) {
+          background: var(--bg-panel);
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          padding: 1rem 1.2rem;
+          overflow-x: auto;
+          line-height: 1.55;
+          margin-top: 1.5em;
+          margin-bottom: 1.5em;
+        }
+
+        /* don't double-style code inside pre */
+        :global(pre > code) {
+          background: none;
+          border: none;
+          padding: 0;
+          font-size: inherit;
+          border-radius: 0;
+        }
       }
 
       .posts {
         text-transform: uppercase;
+        color: var(--accent);
       }
 
       .footer {
@@ -71,15 +115,16 @@ const { content } = Astro.props;
 </head>
 
 <body>
-<TechnicalNav />
+<BlogNav />
 
 <main class="wrapper">
     <h2 class="title">{content.title}</h2>
+    <TopicTags categories={content.categories} />
     <article class="article">
         <slot />
     </article>
     <footer class="footer">
-        <a class="posts" href="/technical">All Technical Posts</a>
+        <a class="posts" href="/blog">All Posts</a>
     </footer>
 </main>
 

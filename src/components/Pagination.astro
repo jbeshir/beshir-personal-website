@@ -5,8 +5,10 @@ const { nextUrl, prevUrl } = Astro.props;
 <style lang="scss">
   .nav {
     display: flex;
-    padding-top: 4rem;
+    padding-top: 2.5rem;
     padding-bottom: 4rem;
+    border-top: 1px solid var(--border);
+    margin-top: 1rem;
   }
 
   .prev,
@@ -15,6 +17,15 @@ const { nextUrl, prevUrl } = Astro.props;
     display: block;
     text-transform: uppercase;
     text-align: center;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
     &[href="#"] {
       display: none;
