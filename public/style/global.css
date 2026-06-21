@@ -9,28 +9,38 @@
   font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
   --user-font-scale: 1rem - 16px;
   --color-light: #F3F4F6;
+
+  /* Theme tokens (light) */
+  --bg: #faf6f0;
+  --bg-panel: #fffdfa;
+  --fg: #20242b;
+  --muted: #6b6358;
+  --accent: #9d2235;
+  --accent-strong: #7a1626;
+  --border: #e7ddcd;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-light: #1F2937;
+
+    --bg: #14171d;
+    --bg-panel: #1b1f27;
+    --fg: #e9e6e1;
+    --muted: #9aa1ab;
+    --accent: #ff8097;
+    --accent-strong: #ffa3b3;
+    --border: #2b313c;
   }
 }
 
 body {
-  background: #f9fafb;
-  color: #111827;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #111827;
-    color: #fff;
-  }
+  background: var(--bg);
+  color: var(--fg);
 }
 
 a {
-  color: crimson;
+  color: var(--accent);
 }
 
 .logo {
