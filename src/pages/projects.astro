@@ -123,6 +123,8 @@ const imgMap = {
             display: flex;
             flex-direction: row;
             gap: 0;
+            color: var(--fg);
+            text-decoration: none;
             transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
         }
 
@@ -130,6 +132,12 @@ const imgMap = {
             transform: translateY(-3px);
             box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
             border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .widget-card:hover .widget-title {
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
         .widget-img {
@@ -158,16 +166,6 @@ const imgMap = {
             color: var(--accent);
             font-size: 1.15rem;
             margin-bottom: 0.4rem;
-        }
-
-        .widget-title a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .widget-title a:hover {
-            text-decoration: underline;
-            text-underline-offset: 2px;
         }
 
         .more-link {
@@ -243,7 +241,7 @@ const imgMap = {
         <div class="featured-card">
             <p class="eyebrow">Featured</p>
             <h3 class="card-title"><a href="https://github.com/jbeshir/demesne">demesne</a></h3>
-            <p>A sandbox for running AI agents and ad-hoc code with controlled network access, exposed over MCP. I built it to run my own agent workflows more carefully.</p>
+            <p>A sandbox for running containerised local AI agent pipelines and ad-hoc code with controlled network access, exposed over MCP. I built it to run my own agent workflows to accomplish larger tasks safely and to higher quality.</p>
         </div>
 
         <h2>Widgets</h2>
@@ -251,15 +249,15 @@ const imgMap = {
 
         <div class="widget-grid">
             {widgets.map((w) => (
-                <div class="widget-card">
+                <a class="widget-card" href={w.url}>
                     <div class="widget-img">
                         <Image src={imgMap[w.image]} alt={w.title} loading="lazy" width={640} />
                     </div>
                     <div class="widget-body">
-                        <p class="widget-title"><a href={w.url}>{w.title}</a></p>
+                        <p class="widget-title">{w.title}</p>
                         <p>{w.blurb}</p>
                     </div>
-                </div>
+                </a>
             ))}
         </div>
         <p class="more-link"><a href="https://github.com/jbeshir/beshir-widgets">More in the repo</a></p>
