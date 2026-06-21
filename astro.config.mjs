@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from "@astrojs/sitemap";
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://beshir.org/',
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap(), mdx()],
   redirects: {
     '/technical': '/blog',
     '/technical/inoculation-against-architecture-fads': '/blog/inoculation-against-architecture-fads',

@@ -1,0 +1,120 @@
+---
+import MainHead from '../components/MainHead.astro';
+import MainNav from '../components/MainNav.astro';
+import AnalyticsFooter from '../components/AnalyticsFooter.astro';
+import WidgetEmbed from '../components/WidgetEmbed.astro';
+import widgets from '../data/widgets.json';
+import '@fontsource/spectral/400.css';
+import '@fontsource/spectral/400-italic.css';
+import '@fontsource/spectral/700.css';
+
+const embedOverrides = {
+    'pennsic-planner': 'https://pennsic-planner.widgets.beshir.org/#/c/o7lUWqX3FUlMA5wEyf7B_w',
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <MainHead title="Widgets" description="Small embeddable widgets, each on its own subdomain." canonicalURL={Astro.request.url} />
+
+    <style>
+        main {
+            max-width: 56rem;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        h1 {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 2.2rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro {
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .widget-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .widget-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
+            padding: 2rem 2.4rem;
+        }
+
+        .card-title {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .card-title a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .card-desc {
+            color: var(--fg);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .widget-card {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <MainNav />
+    <main>
+        <h1>Widgets</h1>
+        <p class="intro">Small embeddable widgets, each on its own subdomain. Live previews below — each is also embeddable in a page via its iframe. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
+
+        <div class="widget-list">
+            {widgets.map((w) => (
+                <div class="widget-card">
+                    <h2 class="card-title"><a href={w.url}>{w.title}</a></h2>
+                    <p class="card-desc">{w.description}</p>
+                    <WidgetEmbed slug={w.slug} height={w.embedHeight} title={w.title} src={embedOverrides[w.slug]} />
+                </div>
+            ))}
+        </div>
+    </main>
+</body>
+<AnalyticsFooter />
+</html>
