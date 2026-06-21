@@ -4,6 +4,9 @@ import AnalyticsBody from '../components/AnalyticsBody.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import {Image} from "astro:assets";
 import avatar from '../assets/avatar.png'
+import '@fontsource/spectral/400.css';
+import '@fontsource/spectral/400-italic.css';
+import '@fontsource/spectral/700.css';
 ---
 <!doctype html>
 <html lang="en">
@@ -18,14 +21,62 @@ import avatar from '../assets/avatar.png'
             flex-direction: column;
             gap: 1em;
             max-width: min(100%, 68ch);
+            margin-bottom: 1.5rem;
         }
 
         main {
-            max-width: 500px;
+            max-width: 34rem;
+            width: 100%;
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 2rem 2.4rem 2.4rem;
+            box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
+        }
+
+        .bio {
+            font-family: 'Spectral', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 1.8rem;
         }
 
         h2 {
-            margin-top: 0.5em;
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.4rem;
+            letter-spacing: 0.01em;
+            margin-top: 1.6rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        main > h2:first-of-type {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.6rem;
+        }
+
+        li {
+            padding: 0.18rem 0;
+            line-height: 1.4;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
         .logo {
@@ -36,6 +87,7 @@ import avatar from '../assets/avatar.png'
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 0.35em;
         }
 
         .logo > a > h1 {
@@ -43,18 +95,45 @@ import avatar from '../assets/avatar.png'
         }
 
         .logo > a > img {
-             width: 2em;
-             height: 2em;
-         }
-
-        .writing-list, .code-list, .elsewhere-list, .volunteering-list, .contest-list, .archive-list {
-            line-height: 1.25em;
-            margin-top: 0.5em;
+            width: 2.4em;
+            height: 2.4em;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            box-shadow: 0 6px 20px -6px rgba(40, 20, 10, 0.4);
         }
 
+        /* De-emphasized blocks */
         .japanese {
-            margin-top: 1.5em;
-            font-size: 0.9em;
+            margin-top: 1.6rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .japanese a {
+            color: var(--muted);
+        }
+
+        .japanese a:hover {
+            color: var(--accent);
+        }
+
+        .archive-heading {
+            font-size: 1rem;
+            border-bottom-width: 1px;
+            color: var(--muted);
+        }
+
+        .archive-list {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .archive-list a {
+            color: var(--muted);
+        }
+
+        .archive-list a:hover {
+            color: var(--accent);
         }
     </style>
 </head>
@@ -69,7 +148,7 @@ import avatar from '../assets/avatar.png'
         </div>
     </header>
     <main>
-        <p>Software engineer and Giving What We Can member.</p>
+        <p class="bio">Software engineer and Giving What We Can member.</p>
 
         <h2>Writing</h2>
         <ul class="writing-list">
@@ -90,6 +169,8 @@ import avatar from '../assets/avatar.png'
             <li><a href="https://www.goodreads.com/user/show/48821743-john-beshir">Goodreads</a></li>
         </ul>
 
+        <p class="japanese">Japanese study: <a href="https://www.wanikani.com/users/JBeshir">WaniKani</a> · <a href="https://bunpro.jp/share/JBeshir">Bunpro</a></p>
+
         <h2>Volunteering</h2>
         <ul class="volunteering-list">
             <li><a href="https://www.vox.com/future-perfect/2019/2/21/18235136/vaccine-malaria-research-trials-volunteers">Vox: Malaria Challenge Trial</a></li>
@@ -100,9 +181,7 @@ import avatar from '../assets/avatar.png'
             <li><a href="https://www.gileadlab.net/2020-insight-leaderboard.html">Top 20% In Metaculus 20/20 Insight Forecasting Contest</a></li>
         </ul>
 
-        <p class="japanese">Japanese study: <a href="https://www.wanikani.com/users/JBeshir">WaniKani</a> · <a href="https://bunpro.jp/share/JBeshir">Bunpro</a></p>
-
-        <h2>Archive</h2>
+        <h2 class="archive-heading">Archive</h2>
         <ul class="archive-list">
             <li><a href="/summaries">Overly Short Summaries</a>: older, archived experimental reading-aid summaries of things I've read.</li>
         </ul>
