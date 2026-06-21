@@ -1,34 +1,33 @@
 ---
-import MainHead from '../../../components/MainHead.astro';
-import BlogNav from '../../../components/BlogNav.astro';
-import PostLink from '../../../components/PostLink.astro';
-import AnalyticsFooter from '../../../components/AnalyticsFooter.astro';
+import MainHead from '../../components/MainHead.astro';
+import BlogNav from '../../components/BlogNav.astro';
+import PostLink from '../../components/PostLink.astro';
+import AnalyticsFooter from '../../components/AnalyticsFooter.astro';
 import '@fontsource/spectral/700.css';
 
 export async function getStaticPaths() {
-  let posts = Object.values(import.meta.glob('../*.md', { eager: true }));
+  let posts = Object.values(import.meta.glob('./*.md', { eager: true }));
   posts = posts.filter((post) => post.frontmatter.subpost !== 'true');
   posts = posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 
-  const bySlug = new Map(); // slug -> { label, posts: [] }
+  const byDomain = new Map(); // slug -> { label, posts: [] }
   for (const post of posts) {
-    const cats = Array.isArray(post.frontmatter.categories) ? post.frontmatter.categories : [];
-    for (const c of cats) {
-      const slug = String(c).toLowerCase().replaceAll('_', '-');
-      const label = String(c).replaceAll('_', ' ');
-      if (!bySlug.has(slug)) bySlug.set(slug, { label, posts: [] });
-      bySlug.get(slug).posts.push(post);
-    }
+    const d = post.frontmatter.domain;
+    if (!d) continue;
+    const slug = String(d).toLowerCase();
+    const label = String(d).charAt(0).toUpperCase() + String(d).slice(1);
+    if (!byDomain.has(slug)) byDomain.set(slug, { label, posts: [] });
+    byDomain.get(slug).posts.push(post);
   }
-  return Array.from(bySlug.entries()).map(([slug, { label, posts }]) => ({
-    params: { slug },
+  return Array.from(byDomain.entries()).map(([slug, { label, posts }]) => ({
+    params: { domain: slug },
     props: { label, posts },
   }));
 }
 
 const { label, posts } = Astro.props;
-const title = `Topic: ${label}`;
-const description = `Posts about ${label} — Writeups of my current best guesses.`;
+const title = `Working Notes: ${label}`;
+const description = `Writeups of my current best guesses.`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <html>
@@ -59,7 +58,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <body>
 <BlogNav />
 <main class="wrapper">
-    <h2 class="title">{title}</h2>
+    <h2 class="title">{label}</h2>
     <small class="count">{posts.length} post{posts.length === 1 ? '' : 's'}</small>
     {posts.map((post) => <PostLink post={post} />)}
 </main>

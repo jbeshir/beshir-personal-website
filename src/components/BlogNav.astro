@@ -7,6 +7,8 @@ import MainNav from './MainNav.astro';
 <style lang="scss">
   .header {
     text-align: center;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
 
     @media (min-width: 600px) {
       display: flex;
@@ -42,7 +44,7 @@ import MainNav from './MainNav.astro';
 <nav class="header">
     <MainNav />
     <a class="title-block" href="/blog">
-      <h1 class="title">Blog</h1>
-      <div class="subtitle">Writing on technology, self-improvement, and rationality.</div>
+      <h1 class="title">Working Notes</h1>
+      <div class="subtitle">Writeups of my current best guesses.</div>
     </a>
 </nav>

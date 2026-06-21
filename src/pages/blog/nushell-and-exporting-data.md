@@ -3,6 +3,7 @@ layout: ../../layouts/blog.astro
 title: "A trial run of nushell: Exporting my Manifold Markets data via API"
 description: "A trial run of nushell via putting together a script to pull all my personal data from an API"
 date: "2023-03-19"
+domain: "technology"
 categories:
   - "nushell"
   - "api"
