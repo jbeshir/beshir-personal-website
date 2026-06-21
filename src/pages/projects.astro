@@ -1,0 +1,266 @@
+---
+import MainHead from '../components/MainHead.astro';
+import AnalyticsBody from '../components/AnalyticsBody.astro';
+import AnalyticsFooter from '../components/AnalyticsFooter.astro';
+import {Image} from "astro:assets";
+import jvtImg from '../assets/projects/japanese-verb-tower.jpg';
+import pennsicImg from '../assets/projects/pennsic-planner.jpg';
+import { widgets, mcpServers } from '../data/projects.js';
+import '@fontsource/spectral/400.css';
+import '@fontsource/spectral/400-italic.css';
+import '@fontsource/spectral/700.css';
+
+const imgMap = {
+    'japanese-verb-tower.jpg': jvtImg,
+    'pennsic-planner.jpg': pennsicImg,
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <MainHead title="Projects" description="Open-source projects I build outside of work." canonicalURL={Astro.request.url} />
+
+    <style>
+        main {
+            max-width: 52rem;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        h1 {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 2.2rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro {
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.5rem;
+            letter-spacing: 0.01em;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-intro {
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        /* Featured card */
+        .featured-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
+            padding: 2rem 2.4rem;
+            margin-bottom: 2rem;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
+            border-color: var(--accent);
+        }
+
+        .card-title {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 0.6rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .card-title a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .card-title a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* Widget cards */
+        .widget-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .widget-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 6px 24px -12px rgba(40, 20, 10, 0.18);
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            color: var(--fg);
+            text-decoration: none;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+
+        .widget-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .widget-card:hover .widget-title {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .widget-img {
+            flex: 0 0 200px;
+            overflow: hidden;
+        }
+
+        .widget-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+        }
+
+        .widget-body {
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .widget-title {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .more-link {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+        }
+
+        .more-link a {
+            color: var(--muted);
+        }
+
+        .more-link a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* MCP list */
+        .mcp-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mcp-list li {
+            padding: 0.3rem 0;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .featured-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .widget-card {
+                flex-direction: column;
+            }
+
+            .widget-img {
+                flex: none;
+                height: 180px;
+            }
+
+            .widget-body {
+                padding: 1.25rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <AnalyticsBody />
+    <main>
+        <h1>Projects</h1>
+        <div class="intro">
+            <p>Open-source projects I build outside of work.</p>
+            <p>Mostly small tools, made for my own use and shared in case they're useful.</p>
+        </div>
+
+        <div class="featured-card">
+            <h3 class="card-title"><a href="https://github.com/jbeshir/demesne">demesne</a></h3>
+            <p>A sandbox for running containerised local AI agent pipelines and ad-hoc code with controlled network access, exposed over MCP. I built it to run my own agent workflows to accomplish larger tasks safely and to higher quality.</p>
+        </div>
+
+        <h2>Widgets</h2>
+        <p class="section-intro">Small embeddable widgets, each deployed on its own subdomain under widgets.beshir.org. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
+
+        <div class="widget-grid">
+            {widgets.map((w) => (
+                <a class="widget-card" href={w.url}>
+                    <div class="widget-img">
+                        <Image src={imgMap[w.image]} alt={w.title} loading="lazy" width={640} />
+                    </div>
+                    <div class="widget-body">
+                        <p class="widget-title">{w.title}</p>
+                        <p>{w.blurb}</p>
+                    </div>
+                </a>
+            ))}
+        </div>
+        <p class="more-link"><a href="https://github.com/jbeshir/beshir-widgets">More in the repo</a></p>
+
+        <h2>MCP servers</h2>
+        <p class="section-intro">A handful of small MCP servers, mostly so an assistant can read from services I use. <a href="https://github.com/jbeshir/mcp-servers">See the repo</a>.</p>
+        <ul class="mcp-list">
+            {mcpServers.map((s) => (
+                <li><strong>{s.name}</strong> — {s.blurb}</li>
+            ))}
+        </ul>
+    </main>
+</body>
+<AnalyticsFooter />
+</html>
