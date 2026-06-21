@@ -92,6 +92,7 @@ import '@fontsource/spectral/700.css';
 
         .logo > a > h1 {
             font-size: 1em;
+            transition: color 0.18s ease;
         }
 
         .logo > a > img {
@@ -100,6 +101,21 @@ import '@fontsource/spectral/700.css';
             border-radius: 50%;
             border: 3px solid var(--accent);
             box-shadow: 0 6px 20px -6px rgba(40, 20, 10, 0.4);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        /* Hover: name takes the accent, avatar lifts — no underline on the logo */
+        .logo > a:hover {
+            text-decoration: none;
+        }
+
+        .logo > a:hover > h1 {
+            color: var(--accent);
+        }
+
+        .logo > a:hover > img {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px -8px rgba(40, 20, 10, 0.5);
         }
 
         /* De-emphasized blocks */
