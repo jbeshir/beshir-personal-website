@@ -1,8 +1,8 @@
 ---
-const { slug, height = 600, title } = Astro.props;
+const { slug, height = 600, title, src } = Astro.props;
 ---
 <iframe
-  src={`https://${slug}.widgets.beshir.org`}
+  src={src ?? `https://${slug}.widgets.beshir.org`}
   width="100%"
   height={height}
   loading="lazy"

@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import AnalyticsBody from '../components/AnalyticsBody.astro';
+import MainNav from '../components/MainNav.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import {Image} from "astro:assets";
 import jvtImg from '../assets/projects/japanese-verb-tower.jpg';
@@ -167,7 +167,7 @@ const imgMap = {
         }
 
         .more-link a {
-            color: var(--muted);
+            color: var(--accent);
         }
 
         .more-link a:hover {
@@ -222,7 +222,7 @@ const imgMap = {
     </style>
 </head>
 <body>
-    <AnalyticsBody />
+    <MainNav />
     <main>
         <h1>Projects</h1>
         <div class="intro">
@@ -236,7 +236,7 @@ const imgMap = {
         </div>
 
         <h2>Widgets</h2>
-        <p class="section-intro">Small embeddable widgets, each deployed on its own subdomain under widgets.beshir.org. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>. <a href="/widgets">All widgets →</a></p>
+        <p class="section-intro">Small embeddable widgets, each deployed on its own subdomain under widgets.beshir.org. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
 
         <div class="widget-grid">
             {widgets.map((w) => (
@@ -251,7 +251,7 @@ const imgMap = {
                 </a>
             ))}
         </div>
-        <p class="more-link"><a href="https://github.com/jbeshir/beshir-widgets">More in the repo</a></p>
+        <p class="more-link"><a href="/widgets">All widgets →</a></p>
 
         <h2>MCP servers</h2>
         <p class="section-intro">A handful of small MCP servers, mostly so an assistant can read from services I use. <a href="https://github.com/jbeshir/mcp-servers">See the repo</a>.</p>
