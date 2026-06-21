@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "japanese-verb-tower",
+    "title": "Japanese Verb Conjugation Tower",
+    "description": "Toggle morpheme layers (causative, passive/potential, polite, negative, past) and watch a Japanese verb assemble morpheme-by-morpheme in canonical composition order, with each tier highlighting the newly-added morpheme and naming its auxiliary (助動詞). Search 26,784 verbs by romaji, kana, or kanji — romaji is auto-converted to kana.",
+    "url": "https://japanese-verb-tower.widgets.beshir.org",
+    "embedHeight": 600
+  },
+  {
+    "slug": "pennsic-planner",
+    "title": "Pennsic Planner",
+    "description": "Browse the Pennsic 53 (2026) class schedule as a side-by-side day timetable, build a shareable personal calendar with time-conflict detection (stored online and reached by a link), and export your plan to calendar (.ics).",
+    "url": "https://pennsic-planner.widgets.beshir.org",
+    "embedHeight": 760
+  },
+  {
+    "slug": "function-plotter",
+    "title": "Function Plotter",
+    "description": "Plot a user-supplied function of x as an SVG curve.",
+    "url": "https://function-plotter.widgets.beshir.org",
+    "embedHeight": 600
+  },
+  {
+    "slug": "image-comparison-table",
+    "title": "Image Comparison Table",
+    "description": "Side-by-side comparison grids of labelled images, with click-to-zoom lightbox and per-row prompt info. Shows a table picker by default; selects a table via the /<id> path or ?table=<id>, and scales to fit the viewport.",
+    "url": "https://image-comparison-table.widgets.beshir.org",
+    "embedHeight": 600
+  }
+]

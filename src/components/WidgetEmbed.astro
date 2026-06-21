@@ -1,0 +1,21 @@
+---
+const { slug, height = 600, title } = Astro.props;
+---
+<iframe
+  src={`https://${slug}.widgets.beshir.org`}
+  width="100%"
+  height={height}
+  loading="lazy"
+  title={title ?? slug}
+  class="widget-embed"
+></iframe>
+
+<style>
+  .widget-embed {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-panel);
+  }
+</style>
