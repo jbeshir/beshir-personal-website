@@ -1,0 +1,35 @@
+---
+const { categories, domain } = Astro.props;
+const cats = Array.isArray(categories) ? categories : [];
+const chips = cats.map((c) => ({
+  slug: String(c).toLowerCase().replaceAll('_', '-'),
+  label: String(c).replaceAll('_', ' '),
+}));
+const domainSlug = domain ? String(domain).toLowerCase() : '';
+const domainLabel = domain ? String(domain).charAt(0).toUpperCase() + String(domain).slice(1) : '';
+// .domain-badge visual theming is in public/style/blog.css
+---
+{(domain || chips.length > 0) && (
+  <ul class="topics">
+    {domain && <li><a class="domain-badge" href={`/blog/${domainSlug}/`}>{domainLabel}</a></li>}
+    {chips.map((c) => (
+      <li><a class="topic-chip" href={`/blog/topics/${c.slug}/`}>{c.label}</a></li>
+    ))}
+  </ul>
+)}
+<style lang="scss">
+  .topics {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .topic-chip {
+    display: inline-block;
+    /* full visual theming (colors/border/hover) lives in public/style/blog.css .topic-chip;
+       keep only layout fallbacks here */
+  }
+</style>

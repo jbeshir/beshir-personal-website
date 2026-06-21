@@ -7,14 +7,14 @@ import MainNav from './MainNav.astro';
 <style lang="scss">
   .header {
     text-align: center;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
 
     @media (min-width: 600px) {
       display: flex;
       align-items: center;
       padding: 2rem;
     }
-
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   }
 
   .title-block {
@@ -24,18 +24,27 @@ import MainNav from './MainNav.astro';
     color: inherit;
     text-decoration: none;
   }
+
   .title {
-    font-size: 1.2em;
+    font-family: 'Spectral', serif;
+    font-size: 1.3em;
     letter-spacing: -0.03em;
-    font-weight: 400;
-    margin: 0 1em 0 0;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: 0.85em;
+    color: var(--muted);
+    margin-top: 0.2em;
   }
 </style>
 
 <nav class="header">
     <MainNav />
-    <a class="title-block" href="/technical">
-      <h1 class="title">Technical Posts</h1>
-      <div class="subtitle">Short posts about tools and technologies.</div>
+    <a class="title-block" href="/blog">
+      <h1 class="title">Working Notes</h1>
+      <div class="subtitle">Writeups of my current best guesses.</div>
     </a>
 </nav>

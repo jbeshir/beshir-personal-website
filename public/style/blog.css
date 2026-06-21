@@ -1,0 +1,49 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* ── Topic chips ─────────────────────────────────────────────────────────── */
+.topic-chip {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.15rem 0.65rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: transparent;
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.topic-chip:hover,
+.topic-chip:focus {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ── Domain badge ─────────────────────────────────────────────────────────── */
+.domain-badge {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.domain-badge:hover,
+.domain-badge:focus {
+    background: var(--accent-strong);
+}

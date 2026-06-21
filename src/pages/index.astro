@@ -81,20 +81,17 @@ import '@fontsource/spectral/700.css';
 
         .logo {
             font-size: clamp(2rem, -0.4742rem + 6.1856vw, 2.75rem);
-        }
-
-        .logo > a {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.35em;
         }
 
-        .logo > a > h1 {
+        .logo > h1 {
             font-size: 1em;
         }
 
-        .logo > a > img {
+        .logo > img {
             width: 2.4em;
             height: 2.4em;
             border-radius: 50%;
@@ -141,18 +138,17 @@ import '@fontsource/spectral/700.css';
     <AnalyticsBody />
     <header>
         <div class="logo">
-            <a href="/">
-                <Image width="240" height="240" src={avatar} alt="avatar" />
-                <h1>JBeshir</h1>
-            </a>
+            <Image width="240" height="240" src={avatar} alt="avatar" />
+            <h1>JBeshir</h1>
         </div>
     </header>
     <main>
         <p class="bio">Software engineer and Giving What We Can member.</p>
 
-        <h2>Writing</h2>
+        <h2>Blogging</h2>
         <ul class="writing-list">
-            <li><a href="/technical">Technical</a>: short posts about tools and technologies.</li>
+            <li><a href="/blog">Working Notes</a> — my blog: writeups of my current best guesses.</li>
+            <li><a href="https://jbeshir.tumblr.com">Tumblr</a></li>
         </ul>
 
         <h2>Code</h2>

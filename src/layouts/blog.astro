@@ -1,0 +1,145 @@
+---
+import MainHead from '../components/MainHead.astro';
+import BlogNav from '../components/BlogNav.astro';
+import AnalyticsFooter from '../components/AnalyticsFooter.astro';
+import TopicTags from '../components/TopicTags.astro';
+import '@fontsource/spectral/400.css';
+import '@fontsource/spectral/400-italic.css';
+import '@fontsource/spectral/700.css';
+import '@fontsource/spectral/700-italic.css';
+
+const { content } = Astro.props;
+---
+
+<html>
+<head>
+    <MainHead title={content.title} description={content.description} canonicalURL={Astro.request.canonicalURL} />
+    <link rel="stylesheet" href="/style/blog.css">
+    <style lang="scss">
+      body {
+        font-family: 'Spectral', serif;
+      }
+
+      .wrapper {
+        max-width: 56rem;
+      }
+
+      .title {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 2.6em;
+        letter-spacing: -0.04em;
+        text-align: center;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      /* breathing room between title and topic chips */
+      :global(.topics) {
+        margin-bottom: 2rem;
+      }
+
+      .img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .article {
+        margin-top: 2rem;
+        margin-bottom: 6rem;
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
+        padding: 2rem 2.4rem;
+
+        :global(p), :global(>ul), :global(h3) {
+          line-height: 2;
+          margin-top: 2em;
+          margin-bottom: 2em;
+        }
+        :global(li) {
+          margin-bottom: 0.6em;
+        }
+        :global(p), :global(> ul) {
+          font-size: 1.3rem;
+        }
+        :global(h3) {
+          font-size: 1.5rem;
+        }
+        :global(li > ul) {
+          margin-top: 0.8em;
+          margin-bottom: 1.2em;
+          font-size: 0.9em;
+        }
+
+        /* inline code */
+        :global(code) {
+          background: var(--bg);
+          border: 1px solid var(--border);
+          border-radius: 4px;
+          padding: 0.1em 0.35em;
+          font-size: 0.875em;
+        }
+
+        /* code blocks */
+        :global(pre) {
+          background: var(--bg);
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          padding: 1rem 1.2rem;
+          overflow-x: auto;
+          line-height: 1.55;
+          margin-top: 1.5em;
+          margin-bottom: 1.5em;
+        }
+
+        /* don't double-style code inside pre */
+        :global(pre > code) {
+          background: none;
+          border: none;
+          padding: 0;
+          font-size: inherit;
+          border-radius: 0;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .article {
+          padding: 1.5rem 1.25rem;
+        }
+      }
+
+      .posts {
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .footer {
+        margin-top: 6rem;
+        padding-bottom: 6rem;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+<BlogNav />
+
+<main class="wrapper">
+    <h2 class="title">{content.title}</h2>
+    <TopicTags categories={content.categories} domain={content.domain} />
+    <article class="article">
+        <slot />
+    </article>
+    <footer class="footer">
+        <a class="posts" href="/blog">All Posts</a>
+    </footer>
+</main>
+
+<footer>
+</footer>
+</body>
+<AnalyticsFooter />
+</html>

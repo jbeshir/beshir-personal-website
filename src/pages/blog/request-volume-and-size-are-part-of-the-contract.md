@@ -1,8 +1,9 @@
 ---
-layout: ../../layouts/technical.astro
+layout: ../../layouts/blog.astro
 title: "Request volume and size are part of the contract"
 description: "A rant about architecture pitches treating request volume as something to optimise later"
 date: "2025-12-06"
+domain: "technology"
 categories:
   - "architecture"
   - "api"
