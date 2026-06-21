@@ -11,10 +11,25 @@ import avatar from '../assets/avatar.png'
   .logo {
       margin: 1em 3em;
   }
+  .logo a {
+      text-decoration: none;
+      color: inherit;
+  }
+  .logo a h1 {
+      transition: color 0.18s ease;
+  }
   .logo img {
     margin-right: 1em;
     border-radius: 50%;
     border: 2px solid var(--accent);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .logo a:hover h1 {
+    color: var(--accent);
+  }
+  .logo a:hover img {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px -6px rgba(40, 20, 10, 0.4);
   }
 </style>
 

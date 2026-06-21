@@ -81,41 +81,22 @@ import '@fontsource/spectral/700.css';
 
         .logo {
             font-size: clamp(2rem, -0.4742rem + 6.1856vw, 2.75rem);
-        }
-
-        .logo > a {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.35em;
         }
 
-        .logo > a > h1 {
+        .logo > h1 {
             font-size: 1em;
-            transition: color 0.18s ease;
         }
 
-        .logo > a > img {
+        .logo > img {
             width: 2.4em;
             height: 2.4em;
             border-radius: 50%;
             border: 3px solid var(--accent);
             box-shadow: 0 6px 20px -6px rgba(40, 20, 10, 0.4);
-            transition: transform 0.18s ease, box-shadow 0.18s ease;
-        }
-
-        /* Hover: name takes the accent, avatar lifts — no underline on the logo */
-        .logo > a:hover {
-            text-decoration: none;
-        }
-
-        .logo > a:hover > h1 {
-            color: var(--accent);
-        }
-
-        .logo > a:hover > img {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px -8px rgba(40, 20, 10, 0.5);
         }
 
         /* De-emphasized blocks */
@@ -151,31 +132,22 @@ import '@fontsource/spectral/700.css';
         .archive-list a:hover {
             color: var(--accent);
         }
-
-        .muted {
-            color: var(--muted);
-        }
     </style>
 </head>
 <body>
     <AnalyticsBody />
     <header>
         <div class="logo">
-            <a href="/">
-                <Image width="240" height="240" src={avatar} alt="avatar" />
-                <h1>JBeshir</h1>
-            </a>
+            <Image width="240" height="240" src={avatar} alt="avatar" />
+            <h1>JBeshir</h1>
         </div>
     </header>
     <main>
         <p class="bio">Software engineer and Giving What We Can member.</p>
 
-        <h2>Writing</h2>
+        <h2>Blogging</h2>
         <ul class="writing-list">
-            <li><a href="/blog">Working Notes</a> — <span class="muted">Writeups of my current best guesses.</span></li>
-            <li><a href="/blog/technology">Technology</a></li>
-            <li><span class="muted">Self-improvement</span> <span class="muted">— soon</span></li>
-            <li><span class="muted">Rationality</span> <span class="muted">— soon</span></li>
+            <li><a href="/blog">Working Notes</a> — my blog: writeups of my current best guesses.</li>
         </ul>
 
         <h2>Code</h2>
