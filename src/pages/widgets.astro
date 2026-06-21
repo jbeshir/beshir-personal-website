@@ -76,7 +76,12 @@ const embedOverrides = {
         .card-desc {
             color: var(--fg);
             line-height: 1.6;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .view-link {
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
         }
 
         a {
@@ -106,13 +111,17 @@ const embedOverrides = {
         <p class="intro">Small embeddable widgets, each on its own subdomain. Live previews below — each is also embeddable in a page via its iframe. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
 
         <div class="widget-list">
-            {widgets.map((w) => (
+            {widgets.map((w) => {
+                const embedUrl = embedOverrides[w.slug] ?? w.url;
+                return (
                 <div class="widget-card">
                     <h2 class="card-title"><a href={w.url}>{w.title}</a></h2>
                     <p class="card-desc">{w.description}</p>
-                    <WidgetEmbed slug={w.slug} height={w.embedHeight} title={w.title} src={embedOverrides[w.slug]} />
+                    <p class="view-link"><a href={embedUrl}>View full page →</a></p>
+                    <WidgetEmbed slug={w.slug} height={w.embedHeight} title={w.title} src={embedUrl} />
                 </div>
-            ))}
+                );
+            })}
         </div>
     </main>
 </body>
