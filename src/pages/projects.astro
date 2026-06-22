@@ -2,18 +2,31 @@
 import MainHead from '../components/MainHead.astro';
 import MainNav from '../components/MainNav.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
-import {Image} from "astro:assets";
-import jvtImg from '../assets/projects/japanese-verb-tower.jpg';
-import pennsicImg from '../assets/projects/pennsic-planner.jpg';
+import { getImage } from "astro:assets";
+import jvtLight from '../assets/projects/japanese-verb-tower-light.jpg';
+import jvtDark from '../assets/projects/japanese-verb-tower-dark.jpg';
+import pennsicLight from '../assets/projects/pennsic-planner-light.jpg';
+import pennsicDark from '../assets/projects/pennsic-planner-dark.jpg';
 import { widgets, mcpServers } from '../data/projects.js';
 import '@fontsource/spectral/400.css';
 import '@fontsource/spectral/400-italic.css';
 import '@fontsource/spectral/700.css';
 
-const imgMap = {
-    'japanese-verb-tower.jpg': jvtImg,
-    'pennsic-planner.jpg': pennsicImg,
+const sources = {
+    'japanese-verb-tower': { light: jvtLight, dark: jvtDark },
+    'pennsic-planner': { light: pennsicLight, dark: pennsicDark },
 };
+
+const imgMap = {};
+for (const [slug, pair] of Object.entries(sources)) {
+    const height = Math.round(640 * pair.light.height / pair.light.width);
+    imgMap[slug] = {
+        light: await getImage({ src: pair.light, width: 640, height }),
+        dark: await getImage({ src: pair.dark, width: 640, height }),
+        width: 640,
+        height,
+    };
+}
 ---
 <!doctype html>
 <html lang="en">
@@ -136,6 +149,12 @@ const imgMap = {
             overflow: hidden;
         }
 
+        .widget-img picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
         .widget-img img {
             width: 100%;
             height: 100%;
@@ -241,7 +260,10 @@ const imgMap = {
             {widgets.map((w) => (
                 <a class="widget-card" href={w.url}>
                     <div class="widget-img">
-                        <Image src={imgMap[w.image]} alt={w.title} loading="lazy" width={640} />
+                        <picture>
+                            <source srcset={imgMap[w.image].dark.src} media="(prefers-color-scheme: dark)" />
+                            <img src={imgMap[w.image].light.src} alt={w.title} loading="lazy" width={imgMap[w.image].width} height={imgMap[w.image].height} />
+                        </picture>
                     </div>
                     <div class="widget-body">
                         <p class="widget-title">{w.title}</p>
