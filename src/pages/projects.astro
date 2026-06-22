@@ -62,12 +62,15 @@ const imgMap = {
 
         /* Featured card */
         .featured-card {
+            display: block;
             background: var(--bg-panel);
             border: 1px solid var(--border);
             border-radius: 18px;
             box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
             padding: 2rem 2.4rem;
             margin-bottom: 2rem;
+            color: var(--fg);
+            text-decoration: none;
             transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
         }
 
@@ -75,6 +78,12 @@ const imgMap = {
             transform: translateY(-3px);
             box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
             border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .featured-card:hover .card-title {
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
         .card-title {
@@ -86,16 +95,6 @@ const imgMap = {
             margin-bottom: 0.6rem;
             border-bottom: none;
             padding-bottom: 0;
-        }
-
-        .card-title a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .card-title a:hover {
-            text-decoration: underline;
-            text-underline-offset: 2px;
         }
 
         /* Widget cards */
@@ -230,10 +229,10 @@ const imgMap = {
             <p>Mostly small tools, made for my own use and shared in case they're useful.</p>
         </div>
 
-        <div class="featured-card">
-            <h3 class="card-title"><a href="https://github.com/jbeshir/demesne">demesne</a></h3>
+        <a class="featured-card" href="https://github.com/jbeshir/demesne">
+            <h3 class="card-title">demesne</h3>
             <p>A sandbox for running containerised local AI agent pipelines and ad-hoc code with controlled network access, exposed over MCP. I built it to run my own agent workflows to accomplish larger tasks safely and to higher quality.</p>
-        </div>
+        </a>
 
         <h2>Widgets</h2>
         <p class="section-intro">Small embeddable widgets, each deployed on its own subdomain under widgets.beshir.org. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
