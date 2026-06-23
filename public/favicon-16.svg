@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <style>
+    .petal { fill: #9d2235; }
+    .heart { fill: #d99a1f; }
+    @media (prefers-color-scheme: dark) {
+      .petal { fill: #ff8097; }
+      .heart { fill: #ffd166; }
+    }
+  </style>
+  <ellipse class="petal" cx="8" cy="4.5" rx="2.5" ry="3.8"/>
+  <ellipse class="petal" cx="8" cy="4.5" rx="2.5" ry="3.8" transform="rotate(72 8 8)"/>
+  <ellipse class="petal" cx="8" cy="4.5" rx="2.5" ry="3.8" transform="rotate(144 8 8)"/>
+  <ellipse class="petal" cx="8" cy="4.5" rx="2.5" ry="3.8" transform="rotate(216 8 8)"/>
+  <ellipse class="petal" cx="8" cy="4.5" rx="2.5" ry="3.8" transform="rotate(288 8 8)"/>
+  <circle class="heart" cx="8" cy="8" r="3"/>
+</svg>

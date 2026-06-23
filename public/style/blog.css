@@ -13,12 +13,15 @@ img {
 
 /* ── Topic chips ─────────────────────────────────────────────────────────── */
 .topic-chip {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
     border-radius: 999px;
-    padding: 0.15rem 0.65rem;
+    padding: 0.35rem 0.75rem;
     font-size: 0.8rem;
     border: 1px solid var(--border);
-    color: var(--muted);
+    color: var(--accent);
     background: transparent;
     text-decoration: none;
     transition: color 0.15s, border-color 0.15s;
@@ -32,9 +35,12 @@ img {
 
 /* ── Domain badge ─────────────────────────────────────────────────────────── */
 .domain-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
     border-radius: 999px;
-    padding: 0.2rem 0.75rem;
+    padding: 0.35rem 0.85rem;
     font-size: 0.82rem;
     font-weight: 600;
     background: var(--accent);
@@ -46,4 +52,8 @@ img {
 .domain-badge:hover,
 .domain-badge:focus {
     background: var(--accent-strong);
+}
+
+.domain-badge:focus-visible {
+    outline-color: #fff;
 }

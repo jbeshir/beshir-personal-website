@@ -29,8 +29,8 @@ import '@fontsource/spectral/700.css';
             width: 100%;
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 2rem 2.4rem 2.4rem;
+            border-radius: 16px;
+            padding: 2rem 2.5rem 2.5rem;
             box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
         }
 
@@ -41,7 +41,7 @@ import '@fontsource/spectral/700.css';
             line-height: 1.5;
             color: var(--muted);
             text-align: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
         }
 
         h2 {
@@ -50,7 +50,7 @@ import '@fontsource/spectral/700.css';
             color: var(--accent);
             font-size: 1.4rem;
             letter-spacing: 0.01em;
-            margin-top: 1.6rem;
+            margin-top: 1.5rem;
             padding-bottom: 0.25rem;
             border-bottom: 2px solid var(--border);
         }
@@ -62,7 +62,7 @@ import '@fontsource/spectral/700.css';
         ul {
             list-style: none;
             padding: 0;
-            margin-top: 0.7rem;
+            margin-top: 0.75rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
@@ -74,10 +74,11 @@ import '@fontsource/spectral/700.css';
 
         .row {
             display: block;
+            min-height: 2.75rem;
             background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 0.55rem 0.85rem;
+            padding: 0.5rem 0.75rem;
             color: var(--fg);
             text-decoration: none;
             text-wrap: pretty;
@@ -105,15 +106,6 @@ import '@fontsource/spectral/700.css';
             text-underline-offset: 2px;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
         .logo {
             font-size: clamp(2rem, -0.4742rem + 6.1856vw, 2.75rem);
             display: flex;
@@ -131,7 +123,7 @@ import '@fontsource/spectral/700.css';
             height: 2.4em;
             border-radius: 50%;
             border: 3px solid var(--accent);
-            box-shadow: 0 6px 20px -6px rgba(40, 20, 10, 0.4);
+            box-shadow: 0 6px 20px -6px rgba(40, 20, 10, 0.22);
         }
 
         /* De-emphasized blocks */
@@ -219,7 +211,7 @@ import '@fontsource/spectral/700.css';
 
         <h2 class="archive-heading">Archive</h2>
         <ul class="archive-list">
-            <li><a href="/summaries">Overly Short Summaries</a>: older, archived experimental reading-aid summaries of things I've read.</li>
+            <li><a href="/summaries">Overly Short Summaries</a>: older, archived experimental reading-aid summaries of things I’ve read.</li>
         </ul>
     </main>
 </body>

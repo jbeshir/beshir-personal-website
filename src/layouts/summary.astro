@@ -25,13 +25,15 @@ const { content } = Astro.props;
         font-size: 3em;
         letter-spacing: -0.04em;
         text-align: center;
+        text-wrap: balance;
       }
 
       .description {
         margin-bottom: 4rem;
         font-size: 1.4em;
         font-weight: 400;
-        text-align: justify;
+        text-align: left;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
@@ -45,19 +47,22 @@ const { content } = Astro.props;
         margin-top: 4rem;
         margin-bottom: 6rem;
 
-        :global(p), :global(>ul), :global(h3) {
-          line-height: 2;
+        :global(p), :global(> ul) {
+          line-height: 1.6;
           margin-top: 2em;
           margin-bottom: 2em;
+        }
+        :global(h3) {
+          line-height: 1.2;
+          margin-top: 2.5em;
+          margin-bottom: 0.75em;
+          font-size: 1.65rem;
         }
         :global(li) {
           margin-bottom: 0.6em;
         }
         :global(p), :global(> ul) {
           font-size: 1.3rem;
-        }
-        :global(h3) {
-          font-size: 1.5rem;
         }
         :global(li > ul) {
           margin-top: 0.8em;
@@ -67,6 +72,9 @@ const { content } = Astro.props;
       }
 
       .posts {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
       }
 
