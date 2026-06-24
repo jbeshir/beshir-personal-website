@@ -20,10 +20,6 @@ const { content } = Astro.props;
         font-family: 'Spectral', serif;
       }
 
-      .wrapper {
-        max-width: 56rem;
-      }
-
       .title {
         margin-top: 3rem;
         margin-bottom: 1rem;
@@ -49,10 +45,12 @@ const { content } = Astro.props;
       .article {
         margin-top: 2rem;
         margin-bottom: 6rem;
+        max-width: 46rem;
+        margin-inline: auto;
         background: var(--bg-panel);
         border: 1px solid var(--border);
         border-radius: 16px;
-        box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
+        box-shadow: var(--shadow-2);
         padding: 2rem 2.5rem;
 
         :global(p), :global(> ul) {

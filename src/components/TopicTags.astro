@@ -7,7 +7,7 @@ const chips = cats.map((c) => ({
 }));
 const domainSlug = domain ? String(domain).toLowerCase() : '';
 const domainLabel = domain ? String(domain).charAt(0).toUpperCase() + String(domain).slice(1) : '';
-// .domain-badge visual theming is in public/style/blog.css
+// .domain-badge visual theming is in public/style/chips.css
 ---
 {(domain || chips.length > 0) && (
   <ul class="topics">

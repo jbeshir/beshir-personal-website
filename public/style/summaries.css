@@ -1,3 +1,5 @@
+@import "chips.css";
+
 img {
     max-width: 100%;
     height: auto;
@@ -9,4 +11,11 @@ img {
     margin-right: auto;
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
