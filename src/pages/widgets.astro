@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import MainNav from '../components/MainNav.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import WidgetEmbed from '../components/WidgetEmbed.astro';
 import widgets from '../data/widgets.json';
@@ -50,8 +50,8 @@ const embedOverrides = {
             background: var(--bg-panel);
             border: 1px solid var(--border);
             border-radius: 16px;
-            box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
-            padding: 2rem 2.4rem;
+            box-shadow: 0 6px 24px -12px rgba(40, 20, 10, 0.18);
+            padding: 2rem 2.5rem;
         }
 
         .card-title {
@@ -84,31 +84,21 @@ const embedOverrides = {
             margin-bottom: 0.75rem;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
         @media (max-width: 600px) {
             main {
                 padding: 1.5rem 1rem 3rem;
             }
 
             .widget-card {
-                padding: 1.5rem 1.25rem;
+                padding: 1.5rem 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <MainNav />
+    <SiteHeader title="Widgets" subtitle="Small embeddable widgets, each on its own subdomain." href="/widgets" />
     <main>
-        <h1>Widgets</h1>
-        <p class="intro">Small embeddable widgets, each on its own subdomain. Live previews below — each is also embeddable in a page via its iframe. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
+        <p class="intro">Live previews below — each is also embeddable in a page via its iframe. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
 
         <div class="widget-list">
             {widgets.map((w) => {

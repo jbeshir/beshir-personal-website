@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import MainNav from '../components/MainNav.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import { getImage } from "astro:assets";
 import jvtLight from '../assets/projects/japanese-verb-tower-light.jpg';
@@ -78,9 +78,9 @@ for (const [slug, pair] of Object.entries(sources)) {
             display: block;
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 18px;
-            box-shadow: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
-            padding: 2rem 2.4rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 24px -12px rgba(40, 20, 10, 0.18);
+            padding: 2rem 2.5rem;
             margin-bottom: 2rem;
             color: var(--fg);
             text-decoration: none;
@@ -114,7 +114,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         .widget-grid {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 2rem;
             margin-bottom: 1rem;
         }
 
@@ -206,22 +206,13 @@ for (const [slug, pair] of Object.entries(sources)) {
             line-height: 1.5;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
         @media (max-width: 600px) {
             main {
                 padding: 1.5rem 1rem 3rem;
             }
 
             .featured-card {
-                padding: 1.5rem 1.25rem;
+                padding: 1.5rem 1.5rem;
             }
 
             .widget-card {
@@ -240,11 +231,9 @@ for (const [slug, pair] of Object.entries(sources)) {
     </style>
 </head>
 <body>
-    <MainNav />
+    <SiteHeader title="Projects" subtitle="Open-source projects I build outside of work." href="/projects" />
     <main>
-        <h1>Projects</h1>
         <div class="intro">
-            <p>Open-source projects I build outside of work.</p>
             <p>Mostly small tools, made for my own use and shared in case they're useful.</p>
         </div>
 
