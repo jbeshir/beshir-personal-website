@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import MainNav from '../components/MainNav.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import { getImage } from "astro:assets";
 import jvtLight from '../assets/projects/japanese-verb-tower-light.jpg';
@@ -231,9 +231,8 @@ for (const [slug, pair] of Object.entries(sources)) {
     </style>
 </head>
 <body>
-    <MainNav />
+    <SiteHeader title="Projects" href="/projects" />
     <main>
-        <h1>Projects</h1>
         <div class="intro">
             <p>Open-source projects I build outside of work.</p>
             <p>Mostly small tools, made for my own use and shared in case they're useful.</p>

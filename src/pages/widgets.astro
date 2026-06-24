@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import MainNav from '../components/MainNav.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import WidgetEmbed from '../components/WidgetEmbed.astro';
 import widgets from '../data/widgets.json';
@@ -96,9 +96,8 @@ const embedOverrides = {
     </style>
 </head>
 <body>
-    <MainNav />
+    <SiteHeader title="Widgets" href="/widgets" />
     <main>
-        <h1>Widgets</h1>
         <p class="intro">Small embeddable widgets, each on its own subdomain. Live previews below — each is also embeddable in a page via its iframe. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
 
         <div class="widget-list">

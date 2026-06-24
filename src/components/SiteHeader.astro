@@ -1,0 +1,54 @@
+---
+const { title, subtitle, href } = Astro.props;
+
+import MainNav from './MainNav.astro';
+---
+
+<style lang="scss">
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+      align-items: center;
+      padding: 2rem;
+    }
+  }
+
+  .title-block {
+    display: block;
+    flex: 1;
+    padding: 1em;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .title {
+    font-family: 'Spectral', serif;
+    font-size: 1.5em;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .subtitle {
+    font-family: 'Spectral', serif;
+    font-size: 1em;
+    color: var(--muted);
+    margin-top: 0.3em;
+  }
+</style>
+
+<nav class="header">
+    <MainNav />
+    <a class="title-block" href={href}>
+      <h1 class="title">{title}</h1>
+      {subtitle && <div class="subtitle">{subtitle}</div>}
+    </a>
+</nav>
