@@ -6,7 +6,13 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://beshir.org/',
-  integrations: [react(), sitemap(), mdx()],
+  integrations: [
+    react(),
+    // Keep per-project privacy policies out of the sitemap — they are reachable
+    // by direct URL (for extension store listings) but intentionally unlisted.
+    sitemap({ filter: (page) => !page.includes('/privacy/') }),
+    mdx(),
+  ],
   redirects: {
     '/technical': '/blog',
     '/technical/inoculation-against-architecture-fads': '/blog/inoculation-against-architecture-fads',
