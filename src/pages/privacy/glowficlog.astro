@@ -1,0 +1,166 @@
+---
+import MainHead from '../../components/MainHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import AnalyticsFooter from '../../components/AnalyticsFooter.astro';
+import '@fontsource/spectral/400.css';
+import '@fontsource/spectral/400-italic.css';
+import '@fontsource/spectral/700.css';
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <MainHead title="glowficlog — Privacy Policy" description="Privacy policy for the glowficlog browser extension." canonicalURL={Astro.request.url} />
+
+    <style>
+        main {
+            max-width: 52rem;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        h1 {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 2.2rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+        }
+
+        .updated {
+            color: var(--muted);
+            margin-bottom: 2.25rem;
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.4rem;
+            letter-spacing: 0.01em;
+            margin-top: 2.25rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        p {
+            line-height: 1.65;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            line-height: 1.65;
+            margin: 0 0 1rem 1.25rem;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.9em;
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.05rem 0.3rem;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 1.5rem 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <SiteHeader title="glowficlog — Privacy Policy" href="/" />
+    <main>
+        <p class="updated">Last updated: 23 June 2026</p>
+
+        <p>
+            <a href="https://github.com/jbeshir/glowficlog">glowficlog</a> is a browser
+            extension that reformats <a href="https://glowfic.com">glowfic.com</a> threads
+            into a compact reader view. This policy describes what the extension does with
+            your data. In short: it does not collect, transmit, or sell your personal
+            information, and it contains no analytics or trackers.
+        </p>
+
+        <h2>Settings you choose</h2>
+        <p>
+            Your preferences — whether the reader is enabled, and the reader options
+            (trim blank lines, condensed view, author colour rings) — are saved locally on
+            your device using the browser's extension storage. They never leave your device
+            and are not sent to the developer or anyone else.
+        </p>
+
+        <h2>Network requests</h2>
+        <p>
+            The extension makes one kind of network request, and only when the
+            <strong>“Author colour rings”</strong> option is enabled (it can be turned off
+            on the options page, in which case no request is made). To draw each author's
+            colour ring, it asks glowfic.com's own public API
+            (<code>/api/v1/users</code>) for that author's “moiety” colour.
+        </p>
+        <ul>
+            <li>
+                The request goes to <strong>glowfic.com</strong> — the same site you are
+                already viewing — and to no one else. It is never sent to the developer or
+                any third party.
+            </li>
+            <li>
+                It contains only the author's <strong>public username</strong>, which is
+                already shown on the page you are reading.
+            </li>
+            <li>
+                Results are cached for the current page session so each author is requested
+                at most once.
+            </li>
+        </ul>
+
+        <h2>What it does not do</h2>
+        <ul>
+            <li>No analytics, telemetry, advertising, or third-party trackers.</li>
+            <li>
+                No collection or transmission of your personal information, browsing
+                history, account details, or credentials.
+            </li>
+            <li>No data is sold or shared.</li>
+        </ul>
+
+        <h2>Permissions</h2>
+        <p>
+            The extension requests only the <code>storage</code> permission, used to save
+            your settings locally. Its content script runs only on glowfic.com thread pages
+            (<code>/posts/</code> and <code>/replies/</code> URLs).
+        </p>
+
+        <h2>Changes</h2>
+        <p>
+            If this policy changes, the updated version will be posted at this URL with a
+            new “last updated” date.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+            Questions or concerns: open an issue at
+            <a href="https://github.com/jbeshir/glowficlog/issues">github.com/jbeshir/glowficlog</a>,
+        </p>
+    </main>
+</body>
+<AnalyticsFooter />
+</html>
