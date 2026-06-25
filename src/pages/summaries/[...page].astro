@@ -4,6 +4,7 @@ import SummaryNav from '../../components/SummaryNav.astro';
 import PostLink from '../../components/PostLink.astro';
 import Pagination from '../../components/Pagination.astro';
 import AnalyticsFooter from '../../components/AnalyticsFooter.astro';
+import '@fontsource/spectral/700.css';
 
 // Metadata
 let title = 'Overly Short Summaries';
@@ -32,7 +33,7 @@ const { page } = Astro.props;
             canonicalURL={canonicalURL}
             prev={page.url.prev}
             next={page.url.next}
-    >
+    />
 
     <style lang="scss">
       .title {
@@ -41,14 +42,21 @@ const { page } = Astro.props;
         margin-top: 2rem;
         margin-bottom: 0;
         text-align: center;
+        font-family: 'Spectral', serif;
+        font-weight: 700;
+        color: var(--accent);
       }
 
       .count {
         font-size: 1em;
         display: block;
         text-align: center;
+        color: var(--muted);
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
       }
     </style>
+    <link rel="stylesheet" href="/style/summaries.css">
 </head>
 
 <body>

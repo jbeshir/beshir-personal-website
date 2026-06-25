@@ -29,12 +29,12 @@ const { content } = Astro.props;
       }
 
       .description {
-        margin-bottom: 4rem;
-        font-size: 1.4em;
+        margin-bottom: 3rem;
+        font-size: 1.25em;
         font-weight: 400;
-        text-align: left;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        font-style: italic;
+        color: var(--muted);
+        line-height: 1.5;
       }
 
       .img {
@@ -46,6 +46,8 @@ const { content } = Astro.props;
       .article {
         margin-top: 4rem;
         margin-bottom: 6rem;
+        max-width: 42rem;
+        margin-inline: auto;
 
         :global(p), :global(> ul) {
           line-height: 1.6;

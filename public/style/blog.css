@@ -1,3 +1,5 @@
+@import "chips.css";
+
 img {
     max-width: 100%;
     height: auto;
@@ -11,47 +13,9 @@ img {
     padding-right: 2rem;
 }
 
-/* ── Topic chips ─────────────────────────────────────────────────────────── */
-.topic-chip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2.75rem;
-    border-radius: 999px;
-    padding: 0.35rem 0.8rem;
-    font-size: 0.9rem;
-    border: 1px solid var(--border);
-    color: var(--accent);
-    background: transparent;
-    text-decoration: none;
-    transition: color 0.15s, border-color 0.15s;
-}
-
-.topic-chip:hover,
-.topic-chip:focus {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-/* ── Domain badge ─────────────────────────────────────────────────────────── */
-.domain-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2.75rem;
-    border-radius: 999px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    background: color-mix(in srgb, var(--accent) 12%, transparent);
-    color: var(--accent);
-    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
-    text-decoration: none;
-    transition: background 0.15s, border-color 0.15s;
-}
-
-.domain-badge:hover,
-.domain-badge:focus {
-    background: color-mix(in srgb, var(--accent) 20%, transparent);
-    border-color: var(--accent);
+@media (max-width: 600px) {
+    .wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
