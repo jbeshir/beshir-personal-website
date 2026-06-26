@@ -1,7 +1,7 @@
 ---
 import TopicTags from './TopicTags.astro';
 
-const { author, post } = Astro.props;
+const { author, post, linkTags = true } = Astro.props;
 
 function formatDate(date) {
 return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
@@ -79,5 +79,5 @@ return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove ev
         </p>
     </div>
 </a>
-<TopicTags categories={post.frontmatter.categories} domain={post.frontmatter.domain} />
+<TopicTags categories={post.frontmatter.categories} domain={post.frontmatter.domain} linkable={linkTags} />
 </div>

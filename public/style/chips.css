@@ -14,8 +14,8 @@
     transition: color 0.15s, border-color 0.15s;
 }
 
-.topic-chip:hover,
-.topic-chip:focus {
+a.topic-chip:hover,
+a.topic-chip:focus {
     color: var(--accent);
     border-color: var(--accent);
 }
@@ -37,8 +37,8 @@
     transition: background 0.15s, border-color 0.15s;
 }
 
-.domain-badge:hover,
-.domain-badge:focus {
+a.domain-badge:hover,
+a.domain-badge:focus {
     background: color-mix(in srgb, var(--accent) 20%, transparent);
     border-color: var(--accent);
 }
