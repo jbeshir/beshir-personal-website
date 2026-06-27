@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>{Title}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+
+<!-- ── Customise from the Tumblr theme editor ─────────────────────────────── -->
+<meta name="color:Background"   content="#faf6f0">
+<meta name="color:Panel"        content="#fffdfa">
+<meta name="color:Text"         content="#20242b">
+<meta name="color:Muted"        content="#6b6358">
+<meta name="color:Accent"       content="#9d2235">
+<meta name="color:Border"       content="#c0ae94">
+
+<meta name="if:Show Avatar"        content="1">
+<meta name="if:Show Corner Flowers" content="1">
+<meta name="if:Show Dividers"      content="1">
+<meta name="if:Dark Mode Auto"     content="1">
+
+<!-- Floral art is served from the owner's site; override here to self-host. -->
+<meta name="text:Corner Image Light"  content="https://beshir.org/tumblr/corner-light.png">
+<meta name="text:Corner Image Dark"   content="https://beshir.org/tumblr/corner-dark.png">
+<meta name="text:Divider Image Light" content="https://beshir.org/tumblr/divider-light.png">
+<meta name="text:Divider Image Dark"  content="https://beshir.org/tumblr/divider-dark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style type="text/css">
+
+/* ── Theme tokens ───────────────────────────────────────────────────────── */
+:root {
+  --bg: {color:Background};
+  --panel: {color:Panel};
+  --fg: {color:Text};
+  --muted: {color:Muted};
+  --accent: {color:Accent};
+  --accent-strong: #7a1626;
+  --border: {color:Border};
+  --gold: #d99a1f;
+  --shadow-1: 0 6px 24px -12px rgba(40, 20, 10, 0.18);
+  --shadow-2: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
+  --corner: url('{text:Corner Image Light}');
+  --divider: url('{text:Divider Image Light}');
+  --serif: 'Spectral', Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+{block:IfDarkModeAuto}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171d;
+    --panel: #252a35;
+    --fg: #e9e6e1;
+    --muted: #b5bcc7;
+    --accent: #eea0ae;
+    --accent-strong: #ffa3b3;
+    --border: #404857;
+    --gold: #ffd166;
+    --shadow-1: 0 6px 24px -12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255,255,255,0.05);
+    --shadow-2: 0 12px 40px -16px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255,255,255,0.07);
+    --corner: url('{text:Corner Image Dark}');
+    --divider: url('{text:Divider Image Dark}');
+  }
+}
+{/block:IfDarkModeAuto}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+a:hover { color: var(--accent-strong); }
+
+img { max-width: 100%; height: auto; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Corner floral sprays ───────────────────────────────────────────────── */
+{block:IfShowCornerFlowers}
+.corner {
+  position: fixed;
+  top: 0;
+  width: min(30vw, 320px);
+  height: min(40vw, 400px);
+  background: var(--corner) no-repeat top left / contain;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 0;
+}
+.corner-l { left: 0; }
+.corner-r { right: 0; transform: scaleX(-1); }
+@media (max-width: 900px) { .corner { display: none; } }
+{/block:IfShowCornerFlowers}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 41rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.site-head {
+  text-align: center;
+  padding: 3.5rem 0 1.5rem;
+}
+
+.avatar img {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 6px 20px -6px rgba(40, 20, 10, 0.30);
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: clamp(1.7rem, 1.1rem + 2.4vw, 2.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 1rem 0 0.4rem;
+}
+.site-title a { color: var(--accent); text-decoration: none; }
+
+.description {
+  color: color-mix(in srgb, var(--fg) 80%, var(--muted));
+  max-width: 32rem;
+  margin: 0.75rem auto 0;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.description a { color: var(--accent); }
+
+.site-nav {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.9rem;
+}
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.35rem 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Header flourish under the masthead */
+.head-rule {
+  height: 50px;
+  margin: 1.25rem auto 0;
+  background: var(--divider) no-repeat center / contain;
+}
+
+/* ── Posts ──────────────────────────────────────────────────────────────── */
+.post {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+  padding: 1.75rem 2rem;
+  margin-top: 2rem;
+  overflow-wrap: break-word;
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 1rem 4rem; }
+  .post { padding: 1.4rem 1.2rem; }
+  body { font-size: 17px; }
+  /* keep the four nav items on one row and ease the tight tracking */
+  .site-nav { font-size: 0.72rem; letter-spacing: 0.04em; gap: 0.3rem 0.6rem; }
+}
+
+.post-title {
+  font-size: clamp(1.25rem, 0.85rem + 3vw, 1.7rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+.post-title a { color: var(--accent); text-decoration: none; }
+
+.post-body > :first-child { margin-top: 0; }
+.post-body > :last-child { margin-bottom: 0; }
+.post-body p { margin: 1.1em 0; }
+.post-body h1, .post-body h2 { font-size: 1.65rem; line-height: 1.25; margin: 1.4em 0 0.5em; color: var(--accent); }
+.post-body h3 { font-size: 1.4rem; line-height: 1.3; margin: 1.4em 0 0.5em; }
+.post-body img { border-radius: 8px; }
+
+.post-body a { color: var(--accent); }
+
+/* Reblog trail / quotes */
+.post-body blockquote {
+  margin: 1.2em 0;
+  padding: 0.2em 0 0.2em 1.1em;
+  border-left: 3px solid var(--border);
+  color: inherit;
+}
+
+/* inline code + code blocks */
+.post-body code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.85em;
+}
+.post-body pre {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+.post-body pre code { background: none; border: 0; padding: 0; font-size: 0.82em; }
+
+/* Photo / video / audio */
+.post-media { margin: 0 0 1rem; }
+.post-media img, .post-media iframe, .post-media video { display: block; width: 100%; border-radius: 10px; }
+.post-caption { margin-top: 1rem; }
+
+/* Quote post */
+.quote-text {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+.quote-source { margin-top: 1rem; color: var(--muted); font-style: normal; }
+.quote-source::before { content: "— "; }
+
+/* Link post */
+.post-link {
+  display: inline-block;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+.post-link::after { content: " \2197"; font-size: 0.8em; }
+
+/* Chat post */
+.chat { list-style: none; padding: 0; margin: 0; }
+.chat li { padding: 0.35em 0; border-bottom: 1px solid var(--border); }
+.chat li:last-child { border-bottom: 0; }
+.chat .label { font-weight: 700; color: var(--accent); margin-right: 0.4em; }
+
+/* Answer (ask) post */
+.qa-question {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+}
+.qa-asker { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.3rem; }
+.qa-asker b { color: var(--accent); }
+
+/* ── Post footer: meta + tags ───────────────────────────────────────────── */
+.post-foot {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+}
+.post-foot a { color: var(--muted); text-decoration: none; }
+.post-foot a:hover { color: var(--accent); }
+.post-foot .dot { opacity: 0.5; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+}
+.tag {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  line-height: 1.3;
+  color: var(--accent-strong);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--accent) 11%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  transition: background 0.15s, border-color 0.15s;
+}
+.tag:hover {
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 20%, var(--panel));
+  border-color: var(--accent);
+}
+
+/* ── Floral divider between posts ───────────────────────────────────────── */
+{block:IfShowDividers}
+.floral-sep {
+  height: 46px;
+  border: 0;
+  margin: 0.5rem auto -0.5rem;
+  background: var(--divider) no-repeat center / contain;
+}
+{/block:IfShowDividers}
+
+/* ── Notes (permalink page) ─────────────────────────────────────────────── */
+.notes-wrap { margin-top: 2.5rem; }
+.notes-wrap ol { list-style: none; padding: 0; font-family: var(--sans); font-size: 0.8rem; }
+.notes-wrap li { padding: 0.4em 0; border-bottom: 1px solid var(--border); }
+.notes-wrap img.avatar { width: 18px; height: 18px; border-radius: 4px; vertical-align: middle; margin-right: 0.4em; }
+
+/* ── Pagination ─────────────────────────────────────────────────────────── */
+.pagination {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+  margin-top: 3rem;
+}
+.pagination a, .pagination span {
+  min-width: 2.4rem;
+  text-align: center;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--accent);
+}
+.pagination a:hover { border-color: var(--accent); }
+.pagination .current { background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); font-weight: 700; }
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+.site-foot {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 4rem;
+}
+.site-foot .mark { width: 22px; height: 22px; display: block; margin: 0 auto 0.6rem; }
+.site-foot a { color: var(--muted); }
+.site-foot a:hover { color: var(--accent); }
+
+</style>
+
+</head>
+
+<body>
+
+{block:IfShowCornerFlowers}
+<div class="corner corner-l" aria-hidden="true"></div>
+<div class="corner corner-r" aria-hidden="true"></div>
+{/block:IfShowCornerFlowers}
+
+<div class="wrap">
+
+  <header class="site-head">
+    {block:IfShowAvatar}<a class="avatar" href="/"><img src="{PortraitURL-128}" alt="{Title}"></a>{/block:IfShowAvatar}
+    <h1 class="site-title"><a href="/">{Title}</a></h1>
+    {block:Description}<div class="description">{Description}</div>{/block:Description}
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      {block:AskEnabled}<a href="/ask">{AskLabel}</a>{/block:AskEnabled}
+      {block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+      <a href="/archive">Archive</a>
+      <a href="{RSS}">RSS</a>
+    </nav>
+    {block:IfShowDividers}<div class="head-rule" aria-hidden="true"></div>{/block:IfShowDividers}
+  </header>
+
+  <main>
+  {block:Posts}
+
+    <article class="post" id="post-{PostID}">
+
+      {block:Text}
+        {block:Title}<h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+        <div class="post-body">{Body}</div>
+      {/block:Text}
+
+      {block:Photo}
+        <div class="post-media">{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}</div>
+        {block:Caption}<div class="post-body post-caption">{Caption}</div>{/block:Caption}
+      {/block:Photo}
+
+      {block:Panorama}
+        <div class="post-media"><img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"></div>
+        {block:Caption}<div class="post-body post-caption">{Caption}</div>{/block:Caption}
+      {/block:Panorama}
+
+      {block:Photoset}
+        <div class="post-media">{Photoset}</div>
+        {block:Caption}<div class="post-body post-caption">{Caption}</div>{/block:Caption}
+      {/block:Photoset}
+
+      {block:Quote}
+        <div class="quote-text">{Quote}</div>
+        {block:Source}<div class="quote-source">{Source}</div>{/block:Source}
+      {/block:Quote}
+
+      {block:Link}
+        <a class="post-link" href="{URL}" {Target}>{Name}</a>
+        {block:Description}<div class="post-body">{Description}</div>{/block:Description}
+      {/block:Link}
+
+      {block:Chat}
+        {block:Title}<h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+        <ul class="chat">
+          {block:Lines}<li class="{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label}{Line}</li>{/block:Lines}
+        </ul>
+      {/block:Chat}
+
+      {block:Audio}
+        <div class="post-media">{block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}{block:AudioPlayer}{AudioPlayer}{/block:AudioPlayer}</div>
+        {block:Caption}<div class="post-body post-caption">{Caption}</div>{/block:Caption}
+      {/block:Audio}
+
+      {block:Video}
+        <div class="post-media">{Video-700}</div>
+        {block:Caption}<div class="post-body post-caption">{Caption}</div>{/block:Caption}
+      {/block:Video}
+
+      {block:Answer}
+        <div class="qa-question">
+          <div class="qa-asker"><b>{Asker}</b> asked:</div>
+          {Question}
+        </div>
+        <div class="post-body">{Answer}</div>
+      {/block:Answer}
+
+      <footer class="post-foot">
+        {block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}
+        {block:NoteCount}<span class="dot">&middot;</span><a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+        {block:RebloggedFrom}<span class="dot">&middot;</span>via <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom}
+      </footer>
+
+      {block:HasTags}
+        <div class="tags">{block:Tags}<a class="tag" href="{TagURL}">#{Tag}</a>{/block:Tags}</div>
+      {/block:HasTags}
+
+      {block:PermalinkPage}
+        {block:NoteCount}<div class="notes-wrap">{PostNotes}</div>{/block:NoteCount}
+      {/block:PermalinkPage}
+
+    </article>
+
+    {block:IfShowDividers}{block:Permalink}{/block:Permalink}{block:IndexPage}<hr class="floral-sep" aria-hidden="true">{/block:IndexPage}{/block:IfShowDividers}
+
+  {/block:Posts}
+  </main>
+
+  {block:Pagination}
+  <nav class="pagination">
+    {block:PreviousPage}<a href="{PreviousPage}" rel="prev">&larr; Newer</a>{/block:PreviousPage}
+    {block:JumpPagination length="5"}
+      {block:CurrentPage}<span class="current">{PageNumber}</span>{/block:CurrentPage}
+      {block:JumpPage}<a href="{URL}">{PageNumber}</a>{/block:JumpPage}
+    {/block:JumpPagination}
+    {block:NextPage}<a href="{NextPage}" rel="next">Older &rarr;</a>{/block:NextPage}
+  </nav>
+  {/block:Pagination}
+
+  <footer class="site-foot">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+      <g fill="var(--accent)">
+        <ellipse cx="16" cy="5.5" rx="2.2" ry="4.2"/>
+        <ellipse cx="16" cy="5.5" rx="2.2" ry="4.2" transform="rotate(45 16 16)"/>
+        <ellipse cx="16" cy="5.5" rx="2.2" ry="4.2" transform="rotate(90 16 16)"/>
+        <ellipse cx="16" cy="5.5" rx="2.2" ry="4.2" transform="rotate(135 16 16)"/>
+        <ellipse cx="16" cy="5.5" rx="2.2" ry="4.2" transform="rotate(180 16 16)"/>
+        <ellipse cx="16" cy="5.5" rx="2.2" ry="4.2" transform="rotate(225 16 16)"/>
+        <ellipse cx="16" cy="5.5" rx="2.2" ry="4.2" transform="rotate(270 16 16)"/>
+        <ellipse cx="16" cy="5.5" rx="2.2" ry="4.2" transform="rotate(315 16 16)"/>
+      </g>
+      <circle cx="16" cy="16" r="4.5" fill="var(--gold)"/>
+    </svg>
+    <div>&copy; {CopyrightYears} {Title} &middot; <a href="https://beshir.org">beshir.org</a></div>
+  </footer>
+
+</div>
+
+</body>
+</html>
