@@ -137,7 +137,7 @@ const sep = `<hr class="floral-sep" aria-hidden="true">`;
 const header = `<header class="site-head">
   <a class="avatar" href="#"><img src="assets/avatar.png" alt="avatar"></a>
   <h1 class="site-title"><a href="#">Everything is Complicated, Let&rsquo;s Try Anyway</a></h1>
-  <div class="description">Aspiring Effective Altruist and member of givingwhatwecan.org. Prediction Booker. Software developer. British. Mid thirties. EA and rationalist-adjacent stuff. I&rsquo;m also <a href="#">on Mastodon</a>.</div>
+  <div class="description">Aspiring Effective Altruist and member of givingwhatwecan.org. Prediction Booker. Software developer. British. Mid thirties. Cishet (to a first approximation) guy. Mostly content with my lot. EA and rationalist-adjacent stuff, with detours into worldbuilding, board games, and Japanese study. I&rsquo;m also <a href="#">on Mastodon</a>.</div>
   <nav class="site-nav"><a href="#">Home</a><a href="#">Ask me anything</a><a href="#">Archive</a><a href="#">RSS</a></nav>
   <div class="head-rule" aria-hidden="true"></div>
 </header>`;

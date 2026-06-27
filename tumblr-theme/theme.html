@@ -152,10 +152,11 @@ img { max-width: 100%; height: auto; }
 .site-title a { color: var(--accent); text-decoration: none; }
 
 .description {
-  font-style: italic;
-  color: var(--muted);
-  max-width: 34rem;
-  margin: 0.5rem auto 0;
+  color: color-mix(in srgb, var(--fg) 80%, var(--muted));
+  max-width: 32rem;
+  margin: 0.75rem auto 0;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 .description a { color: var(--accent); }
 
