@@ -105,15 +105,19 @@ img { max-width: 100%; height: auto; }
 .corner {
   position: fixed;
   top: 0;
-  width: min(30vw, 320px);
-  height: min(40vw, 400px);
+  width: min(28vw, 300px);
+  height: min(36vw, 360px);
   background: var(--corner) no-repeat top left / contain;
-  opacity: 0.95;
+  opacity: 0.28;
   pointer-events: none;
   z-index: 0;
 }
 .corner-l { left: 0; }
 .corner-r { right: 0; transform: scaleX(-1); }
+/* the pink dark-mode art reads fainter on charcoal — give it a touch more */
+{block:IfDarkModeAuto}
+@media (prefers-color-scheme: dark) { .corner { opacity: 0.36; } }
+{/block:IfDarkModeAuto}
 @media (max-width: 900px) { .corner { display: none; } }
 {/block:IfShowCornerFlowers}
 
