@@ -179,17 +179,21 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         .more-link {
-            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            font-size: max(0.9rem, 14px);
             color: var(--muted);
             margin-top: 0.5rem;
         }
 
         .more-link a {
-            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            color: var(--accent-text);
         }
 
         .more-link a:hover {
-            color: var(--accent);
+            color: var(--accent-text);
             text-decoration: underline;
             text-underline-offset: 2px;
         }

@@ -10,14 +10,20 @@
   --user-font-scale: 1rem - 16px;
   --color-light: #F3F4F6;
 
+  /* System sans stack for small functional/UI text (chips, dates, captions). */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
   /* Theme tokens (light) */
   --bg: #faf6f0;
   --bg-panel: #fffdfa;
   --fg: #20242b;
-  --muted: #6b6358;
+  --muted: #5f574c;
   --accent: #9d2235;
   --accent-strong: #7a1626;
-  --border: #c0ae94;
+  /* Accent for small/inline text (links, chip labels, captions); keeps APCA Lc>=75
+     at body/caption size. Light matches --accent; dark uses a lighter rose. */
+  --accent-text: #9d2235;
+  --border: #948468;
   --shadow-1: 0 6px 24px -12px rgba(40, 20, 10, 0.18);
   --shadow-2: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
 }
@@ -29,10 +35,11 @@
     --bg: #14171d;
     --bg-panel: #252a35;
     --fg: #e9e6e1;
-    --muted: #b5bcc7;
+    --muted: #d2d7df;
     --accent: #eea0ae;
     --accent-strong: #ffa3b3;
-    --border: #404857;
+    --accent-text: #f8cdd5;
+    --border: #6e788c;
     --shadow-1: 0 6px 24px -12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
     --shadow-2: 0 12px 40px -16px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.07);
   }
@@ -44,7 +51,7 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
