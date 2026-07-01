@@ -65,7 +65,7 @@ import '@fontsource/spectral/700.css';
             margin-top: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: max(0.5rem, 8px);
         }
 
         li {
@@ -91,13 +91,14 @@ import '@fontsource/spectral/700.css';
         }
 
         .row .name {
-            color: var(--accent);
+            color: var(--accent-text);
         }
 
         .row .desc {
             display: block;
             margin-top: 0.1rem;
-            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            font-size: max(0.9rem, 14px);
             color: var(--muted);
         }
 
@@ -129,7 +130,8 @@ import '@fontsource/spectral/700.css';
         /* De-emphasized blocks */
         .japanese {
             margin-top: 1.6rem;
-            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            font-size: max(0.9rem, 14px);
             color: var(--muted);
         }
 
@@ -138,17 +140,25 @@ import '@fontsource/spectral/700.css';
         }
 
         .japanese a:hover {
-            color: var(--accent);
+            color: var(--accent-text);
         }
 
+        /* Intentional "archive/footer" label: de-emphasised on purpose via an
+           uppercase sans treatment (not a lower heading tier). Muted token now
+           clears the contrast floor. */
         .archive-heading {
-            font-size: 1rem;
+            font-family: var(--font-sans);
+            font-size: max(0.85rem, 14px);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
             border-bottom-width: 1px;
             color: var(--muted);
         }
 
         .archive-list {
-            font-size: 0.8rem;
+            font-family: var(--font-sans);
+            font-size: max(0.8rem, 14px);
             color: var(--muted);
             gap: 0.2rem;
         }
@@ -162,7 +172,7 @@ import '@fontsource/spectral/700.css';
         }
 
         .archive-list a:hover {
-            color: var(--accent);
+            color: var(--accent-text);
         }
     </style>
 </head>

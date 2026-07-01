@@ -74,10 +74,25 @@ const { content } = Astro.props;
       }
 
       .posts {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.6rem 1.5rem;
         letter-spacing: 0.05em;
         text-transform: uppercase;
+        font-family: var(--font-sans);
+        font-size: max(0.85rem, 14px);
+        color: var(--accent-text);
+      }
+
+      /* QW8: trim dark-mode halation on long-form serif body (keep headings as-is). */
+      @media (prefers-color-scheme: dark) {
+        .article :global(p),
+        .article :global(li) {
+          color: #e0dcd7;
+          letter-spacing: 0.012em;
+        }
       }
 
       .footer {
