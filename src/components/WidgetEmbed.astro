@@ -56,8 +56,12 @@ const name = title ?? slug;
     font-size: 1.1rem;
   }
   .widget-cta {
-    font-size: 0.85rem;
-    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: var(--font-sans);
+    font-size: max(0.9rem, 14px);
+    color: var(--accent-text);
     text-decoration: underline;
     text-underline-offset: 2px;
   }

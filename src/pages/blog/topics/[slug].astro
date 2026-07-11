@@ -47,7 +47,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         color: var(--accent);
       }
       .count {
-        font-size: 1em;
+        font-family: var(--font-sans);
+        font-size: max(0.9rem, 14px);
         display: block;
         text-align: center;
         color: var(--muted);

@@ -31,7 +31,8 @@ import '@fontsource/spectral/700.css';
         .updated {
             color: var(--muted);
             margin-bottom: 2.25rem;
-            font-size: 0.95rem;
+            font-family: var(--font-sans);
+            font-size: max(0.95rem, 14px);
         }
 
         h2 {
@@ -62,11 +63,7 @@ import '@fontsource/spectral/700.css';
         }
 
         a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
+            color: var(--accent-text);
             text-decoration: underline;
             text-underline-offset: 2px;
         }
