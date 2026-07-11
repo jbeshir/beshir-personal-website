@@ -2,11 +2,15 @@
 import MainHead from '../components/MainHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
+import FeaturedCard from '../components/FeaturedCard.astro';
+import FeaturedMediaCard from '../components/FeaturedMediaCard.astro';
 import { getImage } from "astro:assets";
 import jvtLight from '../assets/projects/japanese-verb-tower-light.jpg';
 import jvtDark from '../assets/projects/japanese-verb-tower-dark.jpg';
 import pennsicLight from '../assets/projects/pennsic-planner-light.jpg';
 import pennsicDark from '../assets/projects/pennsic-planner-dark.jpg';
+import glowficlogLight from '../assets/projects/glowficlog-light.jpg';
+import glowficlogDark from '../assets/projects/glowficlog-dark.jpg';
 import { widgets, mcpServers } from '../data/projects.js';
 import '@fontsource/spectral/400.css';
 import '@fontsource/spectral/400-italic.css';
@@ -74,31 +78,6 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         /* Featured card */
-        .featured-card {
-            display: block;
-            background: var(--bg-panel);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: var(--shadow-1);
-            padding: 2rem 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--fg);
-            text-decoration: none;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-        }
-
-        .featured-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-2);
-            border-color: var(--accent);
-            text-decoration: none;
-        }
-
-        .featured-card:hover .card-title {
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
         .card-title {
             font-family: 'Spectral', serif;
             font-weight: 700;
@@ -224,10 +203,6 @@ for (const [slug, pair] of Object.entries(sources)) {
                 padding: 1.5rem 1rem 3rem;
             }
 
-            .featured-card {
-                padding: 1.5rem 1.5rem;
-            }
-
             .widget-card {
                 flex-direction: column;
             }
@@ -250,10 +225,21 @@ for (const [slug, pair] of Object.entries(sources)) {
             <p>Mostly small tools, made for my own use and shared in case they're useful.</p>
         </div>
 
-        <a class="featured-card" href="https://github.com/jbeshir/demesne">
+        <FeaturedCard href="https://github.com/jbeshir/demesne">
             <h3 class="card-title">demesne</h3>
             <p>A sandbox for running containerised local AI agent pipelines and ad-hoc code with controlled network access, exposed over MCP. I built it to run my own agent workflows to accomplish larger tasks safely and to higher quality.</p>
-        </a>
+        </FeaturedCard>
+
+        <FeaturedMediaCard
+            href="https://github.com/jbeshir/glowficlog"
+            lightSrc={glowficlogLight}
+            darkSrc={glowficlogDark}
+            imageWidth={520}
+            imageAlt="The glowficlog reader showing a condensed glowfic thread"
+        >
+            <h3 class="card-title">glowficlog</h3>
+            <p>A browser extension that reformats glowfic.com thread pages into a compact, high-density reader, collapsing endless one-post-per-line forum formatting into a continuous, novel-like column with alternating gutter icons. I built it because long threads were a slog to read in their native layout.</p>
+        </FeaturedMediaCard>
 
         <h2>Widgets</h2>
         <p class="section-intro">Small embeddable widgets, each deployed on its own subdomain under widgets.beshir.org. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>

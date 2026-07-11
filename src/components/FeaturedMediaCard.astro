@@ -1,0 +1,69 @@
+---
+import { getImage } from "astro:assets";
+import FeaturedCard from './FeaturedCard.astro';
+
+interface Props {
+    href: string;
+    lightSrc: ImageMetadata;
+    darkSrc: ImageMetadata;
+    imageWidth: number;
+    imageAlt: string;
+}
+
+const { href, lightSrc, darkSrc, imageWidth, imageAlt } = Astro.props;
+const imageHeight = Math.round(imageWidth * lightSrc.height / lightSrc.width);
+const light = await getImage({ src: lightSrc, width: imageWidth, height: imageHeight });
+const dark = await getImage({ src: darkSrc, width: imageWidth, height: imageHeight });
+---
+<FeaturedCard href={href} class="featured-card-media">
+    <div class="featured-media-body">
+        <slot />
+    </div>
+    <div class="featured-media-img">
+        <picture>
+            <source srcset={dark.src} media="(prefers-color-scheme: dark)" />
+            <img src={light.src} alt={imageAlt} loading="lazy" width={imageWidth} height={imageHeight} />
+        </picture>
+    </div>
+</FeaturedCard>
+<style>
+    :global(.featured-card.featured-card-media) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.75rem;
+    }
+
+    .featured-media-body {
+        flex: 1 1 auto;
+    }
+
+    .featured-media-body :global(.card-title) {
+        margin-bottom: 0.5rem;
+    }
+
+    .featured-media-img {
+        flex: 0 0 260px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow-1);
+    }
+
+    .featured-media-img picture,
+    .featured-media-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 600px) {
+        :global(.featured-card.featured-card-media) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .featured-media-img {
+            flex: none;
+        }
+    }
+</style>
