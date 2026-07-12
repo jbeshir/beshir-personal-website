@@ -16,6 +16,9 @@
   /* Theme tokens (light) */
   --bg: #faf6f0;
   --bg-panel: #fffdfa;
+  /* Large read-only content panels (article body, home bio) — a small step up
+     from --bg, distinct from --bg-panel's cards/nav which sit further forward. */
+  --bg-content: #fcf9f4;
   --fg: #20242b;
   --muted: #5f574c;
   --accent: #9d2235;
@@ -34,6 +37,7 @@
 
     --bg: #14171d;
     --bg-panel: #252a35;
+    --bg-content: #181c24;
     --fg: #e9e6e1;
     --muted: #d2d7df;
     --accent: #efa6b3;
