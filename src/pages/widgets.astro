@@ -4,9 +4,11 @@ import SiteHeader from '../components/SiteHeader.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import WidgetEmbed from '../components/WidgetEmbed.astro';
 import widgets from '../data/widgets.json';
-import '@fontsource/spectral/400.css';
-import '@fontsource/spectral/400-italic.css';
-import '@fontsource/spectral/700.css';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/400-italic.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/ibm-plex-sans-jp/400.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 const embedOverrides = {
     'pennsic-planner': 'https://pennsic-planner.widgets.beshir.org/#/c/o7lUWqX3FUlMA5wEyf7B_w',
@@ -26,7 +28,7 @@ const embedOverrides = {
         }
 
         h1 {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 2.2rem;
@@ -55,7 +57,7 @@ const embedOverrides = {
         }
 
         .card-title {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.5rem;

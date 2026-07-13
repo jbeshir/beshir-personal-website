@@ -4,7 +4,8 @@ import SummaryNav from '../../components/SummaryNav.astro';
 import PostLink from '../../components/PostLink.astro';
 import Pagination from '../../components/Pagination.astro';
 import AnalyticsFooter from '../../components/AnalyticsFooter.astro';
-import '@fontsource/spectral/700.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 // Metadata
 let title = 'Overly Short Summaries';
@@ -42,7 +43,7 @@ const { page } = Astro.props;
         margin-top: 2rem;
         margin-bottom: 0;
         text-align: center;
-        font-family: 'Spectral', serif;
+        font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
         font-weight: 700;
         color: var(--accent);
       }

@@ -4,7 +4,8 @@ import BlogNav from '../../components/BlogNav.astro';
 import PostLink from '../../components/PostLink.astro';
 import Pagination from '../../components/Pagination.astro';
 import AnalyticsFooter from '../../components/AnalyticsFooter.astro';
-import '@fontsource/spectral/700.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 // Metadata
 let title = 'Working Notes';
@@ -37,7 +38,7 @@ const { page } = Astro.props;
 
     <style lang="scss">
       .title {
-        font-family: 'Spectral', serif;
+        font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
         font-weight: 700;
         font-size: 3em;
         letter-spacing: -0.04em;

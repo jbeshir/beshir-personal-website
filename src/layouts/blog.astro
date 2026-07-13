@@ -3,10 +3,12 @@ import MainHead from '../components/MainHead.astro';
 import BlogNav from '../components/BlogNav.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import TopicTags from '../components/TopicTags.astro';
-import '@fontsource/spectral/400.css';
-import '@fontsource/spectral/400-italic.css';
-import '@fontsource/spectral/700.css';
-import '@fontsource/spectral/700-italic.css';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/400-italic.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/schibsted-grotesk/700-italic.css';
+import '@fontsource/ibm-plex-sans-jp/400.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 const { content } = Astro.props;
 ---
@@ -17,7 +19,7 @@ const { content } = Astro.props;
     <link rel="stylesheet" href="/style/blog.css">
     <style lang="scss">
       body {
-        font-family: 'Spectral', serif;
+        font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
       }
 
       .title {

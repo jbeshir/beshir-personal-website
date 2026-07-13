@@ -4,9 +4,11 @@ import AnalyticsBody from '../components/AnalyticsBody.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import {Image} from "astro:assets";
 import avatar from '../assets/avatar.png'
-import '@fontsource/spectral/400.css';
-import '@fontsource/spectral/400-italic.css';
-import '@fontsource/spectral/700.css';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/400-italic.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/ibm-plex-sans-jp/400.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 ---
 <!doctype html>
 <html lang="en">
@@ -35,7 +37,7 @@ import '@fontsource/spectral/700.css';
         }
 
         .bio {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-style: italic;
             font-size: 1.2rem;
             line-height: 1.5;
@@ -45,7 +47,7 @@ import '@fontsource/spectral/700.css';
         }
 
         h2 {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.4rem;
