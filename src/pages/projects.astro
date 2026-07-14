@@ -12,9 +12,11 @@ import pennsicDark from '../assets/projects/pennsic-planner-dark.jpg';
 import glowficlogLight from '../assets/projects/glowficlog-light.jpg';
 import glowficlogDark from '../assets/projects/glowficlog-dark.jpg';
 import { widgets, mcpServers } from '../data/projects.js';
-import '@fontsource/spectral/400.css';
-import '@fontsource/spectral/400-italic.css';
-import '@fontsource/spectral/700.css';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/400-italic.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/ibm-plex-sans-jp/400.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 const sources = {
     'japanese-verb-tower': { light: jvtLight, dark: jvtDark },
@@ -46,7 +48,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         h1 {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 2.2rem;
@@ -61,7 +63,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         h2 {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.5rem;
@@ -79,7 +81,7 @@ for (const [slug, pair] of Object.entries(sources)) {
 
         /* Featured card */
         .card-title {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.6rem;
@@ -150,7 +152,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         .widget-title {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.15rem;

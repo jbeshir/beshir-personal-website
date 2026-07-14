@@ -3,7 +3,8 @@ import MainHead from '../../../components/MainHead.astro';
 import BlogNav from '../../../components/BlogNav.astro';
 import PostLink from '../../../components/PostLink.astro';
 import AnalyticsFooter from '../../../components/AnalyticsFooter.astro';
-import '@fontsource/spectral/700.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 export async function getStaticPaths() {
   let posts = Object.values(import.meta.glob('../*.md', { eager: true }));
@@ -37,7 +38,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="stylesheet" href="/style/blog.css">
     <style lang="scss">
       .title {
-        font-family: 'Spectral', serif;
+        font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
         font-weight: 700;
         font-size: 3em;
         letter-spacing: -0.04em;
