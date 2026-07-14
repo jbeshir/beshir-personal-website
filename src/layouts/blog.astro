@@ -47,7 +47,7 @@ const { content } = Astro.props;
       .article {
         margin-top: 2rem;
         margin-bottom: 6rem;
-        max-width: 46rem;
+        max-width: 50rem;
         margin-inline: auto;
         background: var(--bg-panel);
         border: 1px solid var(--border);
@@ -55,7 +55,7 @@ const { content } = Astro.props;
         box-shadow: var(--shadow-2);
         padding: 2rem 2.5rem;
 
-        :global(p), :global(> ul) {
+        :global(p), :global(> ul), :global(> ol) {
           line-height: 1.6;
           margin-top: 2em;
           margin-bottom: 2em;
@@ -69,8 +69,8 @@ const { content } = Astro.props;
         :global(li) {
           margin-bottom: 0.6em;
         }
-        :global(p), :global(> ul) {
-          font-size: 1.3rem;
+        :global(p), :global(> ul), :global(> ol) {
+          font-size: 1.1rem;
         }
         :global(li > ul) {
           margin-top: 0.8em;
