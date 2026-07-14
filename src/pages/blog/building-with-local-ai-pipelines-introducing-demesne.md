@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/blog.astro
-title: "Takes On Local AI Pipelines - Introducing Demesne"
+title: "Takes on local AI pipelines - Introducing Demesne"
 description: "Announcing my take on heterogeneous local containerised agent orchestration"
 date: "2026-07-12"
 domain: "technology"
