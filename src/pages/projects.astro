@@ -71,7 +71,19 @@ for (const [slug, pair] of Object.entries(sources)) {
             margin-top: 2.5rem;
             margin-bottom: 0.75rem;
             padding-bottom: 0.25rem;
-            border-bottom: 2px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h2::after {
+            content: "✦";
+            position: absolute;
+            right: 0;
+            bottom: -0.6em;
+            padding-left: 0.6em;
+            background: var(--bg);
+            color: var(--brass);
+            font-size: 0.55em;
         }
 
         .section-intro {
@@ -100,9 +112,11 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         .widget-card {
+            position: relative;
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 0;
+            clip-path: var(--clip-frame);
             box-shadow: var(--shadow-1);
             overflow: hidden;
             display: flex;
@@ -111,6 +125,15 @@ for (const [slug, pair] of Object.entries(sources)) {
             color: var(--fg);
             text-decoration: none;
             transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+
+        .widget-card::after {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border: 1px solid color-mix(in srgb, var(--border) 42%, transparent);
+            clip-path: var(--clip-frame);
+            pointer-events: none;
         }
 
         .widget-card:hover {
@@ -185,7 +208,8 @@ for (const [slug, pair] of Object.entries(sources)) {
             margin: 0;
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 0;
+            clip-path: var(--clip-frame);
             box-shadow: var(--shadow-1);
             padding: 0.5rem 1.5rem;
         }

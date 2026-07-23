@@ -2,6 +2,7 @@
 const { title, subtitle, href } = Astro.props;
 
 import MainNav from './MainNav.astro';
+import BotanicalRule from './BotanicalRule.astro';
 ---
 
 <style lang="scss">
@@ -12,11 +13,25 @@ import MainNav from './MainNav.astro';
     text-align: center;
     background: var(--bg-panel);
     border-bottom: 1px solid var(--border);
+    position: relative;
 
     @media (min-width: 600px) {
       flex-direction: row;
       align-items: center;
       padding: 1.25rem 2rem;
+    }
+  }
+
+  .header-flourish {
+    width: min(20rem, 70vw);
+    margin: -0.15rem auto 0.4rem;
+
+    @media (min-width: 600px) {
+      position: absolute;
+      width: 12rem;
+      right: 2rem;
+      bottom: -1.05rem;
+      margin: 0;
     }
   }
 
@@ -51,4 +66,7 @@ import MainNav from './MainNav.astro';
       <h1 class="title">{title}</h1>
       {subtitle && <div class="subtitle">{subtitle}</div>}
     </a>
+    <div class="header-flourish">
+      <BotanicalRule />
+    </div>
 </nav>

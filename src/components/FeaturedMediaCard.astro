@@ -44,7 +44,8 @@ const dark = await getImage({ src: darkSrc, width: imageWidth, height: imageHeig
 
     .featured-media-img {
         flex: 0 0 260px;
-        border-radius: 10px;
+        border-radius: 0;
+        clip-path: polygon(0 7px, 7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%);
         overflow: hidden;
         box-shadow: var(--shadow-1);
     }
