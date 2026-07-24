@@ -45,7 +45,7 @@
   --border: {color:Border};
   --gold: #d99a1f;
   --botanical: #66745e;
-  --clip-frame: polygon(0 6px, 6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px));
+  --frame-node: color-mix(in srgb, var(--gold) 65%, var(--border));
   --shadow-1: 0 6px 24px -12px rgba(40, 20, 10, 0.18);
   --shadow-2: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
   --corner: url('{text:Corner Image Light}');
@@ -225,19 +225,35 @@ img { max-width: 100%; height: auto; }
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 0;
-  clip-path: var(--clip-frame);
   box-shadow: var(--shadow-2);
   padding: 1.75rem 2rem;
   margin-top: 2rem;
   overflow-wrap: break-word;
 }
-.post::after {
+.post::before,
+.post::after,
+.qa-question::before,
+.qa-question::after {
   content: "";
   position: absolute;
-  inset: 6px;
-  border: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
-  clip-path: var(--clip-frame);
+  z-index: 1;
+  width: 18px;
+  height: 18px;
   pointer-events: none;
+  background: var(--frame-node);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath fill='none' stroke='black' stroke-width='1' d='M1 9h5M9 1v5M6 9c0-3 1-5 3-7M9 6c3 0 5 1 7 3'/%3E%3Cpath d='m9 6 3 3-3 3-3-3z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath fill='none' stroke='black' stroke-width='1' d='M1 9h5M9 1v5M6 9c0-3 1-5 3-7M9 6c3 0 5 1 7 3'/%3E%3Cpath d='m9 6 3 3-3 3-3-3z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.post::before,
+.qa-question::before {
+  top: -1px;
+  left: -1px;
+}
+.post::after,
+.qa-question::after {
+  right: -1px;
+  bottom: -1px;
+  transform: rotate(180deg);
 }
 @media (max-width: 600px) {
   .wrap { padding: 0 1rem 4rem; }
@@ -323,10 +339,10 @@ img { max-width: 100%; height: auto; }
 
 /* Answer (ask) post */
 .qa-question {
+  position: relative;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 0;
-  clip-path: var(--clip-frame);
   padding: 0.9rem 1.1rem;
   margin-bottom: 1rem;
 }

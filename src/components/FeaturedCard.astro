@@ -6,7 +6,7 @@ interface Props {
 
 const { href, class: className } = Astro.props;
 ---
-<a class:list={['featured-card', className]} href={href}>
+<a class:list={['featured-card', 'botanical-frame', className]} href={href}>
     <slot />
 </a>
 <style>
@@ -15,7 +15,6 @@ const { href, class: className } = Astro.props;
         background: var(--bg-panel);
         border: 1px solid var(--border);
         border-radius: 0;
-        clip-path: var(--clip-frame);
         box-shadow: var(--shadow-1);
         padding: 2rem 2.5rem;
         margin-bottom: 2rem;

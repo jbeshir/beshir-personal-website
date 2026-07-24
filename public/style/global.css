@@ -26,9 +26,9 @@
   --border: #948468;
   --brass: #b47a24;
   --botanical: #66745e;
+  --frame-node: color-mix(in srgb, var(--brass) 65%, var(--border));
   --shadow-1: 0 6px 24px -12px rgba(40, 20, 10, 0.18);
   --shadow-2: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
-  --clip-frame: polygon(0 6px, 6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,6 +53,36 @@
 body {
   background: var(--bg);
   color: var(--fg);
+}
+
+.botanical-frame {
+  position: relative;
+  border-radius: 0;
+  clip-path: none;
+}
+
+.botanical-frame::before,
+.botanical-frame::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  background: var(--frame-node);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath fill='none' stroke='black' stroke-width='1' d='M1 9h5M9 1v5M6 9c0-3 1-5 3-7M9 6c3 0 5 1 7 3'/%3E%3Cpath d='m9 6 3 3-3 3-3-3z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath fill='none' stroke='black' stroke-width='1' d='M1 9h5M9 1v5M6 9c0-3 1-5 3-7M9 6c3 0 5 1 7 3'/%3E%3Cpath d='m9 6 3 3-3 3-3-3z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.botanical-frame::before {
+  top: -1px;
+  left: -1px;
+}
+
+.botanical-frame::after {
+  right: -1px;
+  bottom: -1px;
+  transform: rotate(180deg);
 }
 
 /* A faint drafting lattice gives the botanical geometry a constructed feel. */

@@ -34,19 +34,9 @@ import '@fontsource/ibm-plex-sans-jp/700.css';
             background: var(--bg-panel);
             border: 1px solid var(--border);
             border-radius: 0;
-            clip-path: var(--clip-frame);
             overflow: hidden;
             padding: 2rem 2.5rem 2.5rem;
             box-shadow: var(--shadow-2);
-        }
-
-        main::before {
-            content: "";
-            position: absolute;
-            inset: 7px;
-            border: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
-            clip-path: var(--clip-frame);
-            pointer-events: none;
         }
 
         .bio {
@@ -245,7 +235,7 @@ import '@fontsource/ibm-plex-sans-jp/700.css';
             <BotanicalRule />
         </div>
     </header>
-    <main>
+    <main class="botanical-frame">
         <p class="bio">Software engineer and Giving What We Can member.</p>
 
         <h2>Writing</h2>

@@ -115,7 +115,6 @@ for (const [slug, pair] of Object.entries(sources)) {
             background: var(--bg-panel);
             border: 1px solid var(--border);
             border-radius: 0;
-            clip-path: var(--clip-frame);
             box-shadow: var(--shadow-1);
             overflow: hidden;
             display: flex;
@@ -281,7 +280,7 @@ for (const [slug, pair] of Object.entries(sources)) {
 
         <div class="widget-grid">
             {widgets.map((w) => (
-                <a class="widget-card" href={w.url}>
+                <a class="widget-card botanical-frame" href={w.url}>
                     <div class="widget-img">
                         <picture>
                             <source srcset={imgMap[w.image].dark.src} media="(prefers-color-scheme: dark)" />

@@ -52,7 +52,6 @@ const { content } = Astro.props;
         background: var(--bg-panel);
         border: 1px solid var(--border);
         border-radius: 0;
-        clip-path: var(--clip-frame);
         box-shadow: var(--shadow-2);
         padding: 2rem 2.5rem;
 
@@ -152,7 +151,7 @@ const { content } = Astro.props;
 <main class="wrapper">
     <h2 class="title">{content.title}</h2>
     <TopicTags categories={content.categories} domain={content.domain} />
-    <article class="article">
+    <article class="article botanical-frame">
         <slot />
     </article>
     <footer class="footer">
