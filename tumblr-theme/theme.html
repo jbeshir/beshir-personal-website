@@ -237,23 +237,22 @@ img { max-width: 100%; height: auto; }
   content: "";
   position: absolute;
   z-index: 1;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   pointer-events: none;
   background: var(--frame-node);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath fill='none' stroke='black' stroke-width='1' d='M0 11h2.7M11 0v2.7'/%3E%3Cpath d='M11 9.2C8.7 7.5 8.8 4.7 11 2.7c2.2 2 2.3 4.8 0 6.5ZM12.8 11c1.7-2.3 4.5-2.2 6.5 0-2 2.2-4.8 2.3-6.5 0ZM11 12.8c2.3 1.7 2.2 4.5 0 6.5-2.2-2-2.3-4.8 0-6.5ZM9.2 11c-1.7 2.3-4.5 2.2-6.5 0 2-2.2 4.8-2.3 6.5 0Z'/%3E%3Ccircle cx='11' cy='11' r='1.55'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath fill='none' stroke='black' stroke-width='1' d='M0 11h2.7M11 0v2.7'/%3E%3Cpath d='M11 9.2C8.7 7.5 8.8 4.7 11 2.7c2.2 2 2.3 4.8 0 6.5ZM12.8 11c1.7-2.3 4.5-2.2 6.5 0-2 2.2-4.8 2.3-6.5 0ZM11 12.8c2.3 1.7 2.2 4.5 0 6.5-2.2-2-2.3-4.8 0-6.5ZM9.2 11c-1.7 2.3-4.5 2.2-6.5 0 2-2.2 4.8-2.3 6.5 0Z'/%3E%3Ccircle cx='11' cy='11' r='1.55'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M9 7.4C6.9 5.9 7 2.9 9 .7c2 2.2 2.1 5.2 0 6.7ZM10.6 9c1.5-2.1 4.5-2 6.7 0-2.2 2-5.2 2.1-6.7 0ZM9 10.6c2.1 1.5 2 4.5 0 6.7-2-2.2-2.1-5.2 0-6.7ZM7.4 9c-1.5 2.1-4.5 2-6.7 0 2.2-2 5.2-2.1 6.7 0Z'/%3E%3Ccircle cx='9' cy='9' r='1.35'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M9 7.4C6.9 5.9 7 2.9 9 .7c2 2.2 2.1 5.2 0 6.7ZM10.6 9c1.5-2.1 4.5-2 6.7 0-2.2 2-5.2 2.1-6.7 0ZM9 10.6c2.1 1.5 2 4.5 0 6.7-2-2.2-2.1-5.2 0-6.7ZM7.4 9c-1.5 2.1-4.5 2-6.7 0 2.2-2 5.2-2.1 6.7 0Z'/%3E%3Ccircle cx='9' cy='9' r='1.35'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .post::before,
 .qa-question::before {
-  top: -1px;
-  left: -1px;
+  top: 0;
+  left: 0;
 }
 .post::after,
 .qa-question::after {
-  right: -1px;
-  bottom: -1px;
-  transform: rotate(180deg);
+  right: 0;
+  bottom: 0;
 }
 @media (max-width: 600px) {
   .wrap { padding: 0 1rem 4rem; }
