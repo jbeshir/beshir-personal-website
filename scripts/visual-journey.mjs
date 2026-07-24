@@ -12,6 +12,7 @@ const surfaces = [
   { name: 'home', root: siteRoot, path: '/' },
   { name: 'projects', root: siteRoot, path: '/projects/' },
   { name: 'blog', root: siteRoot, path: '/blog/' },
+  { name: 'summaries', root: siteRoot, path: '/summaries/' },
   { name: 'tumblr', root: tumblrRoot, path: '/' },
 ];
 const viewports = [

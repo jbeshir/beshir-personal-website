@@ -76,14 +76,15 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         h2::after {
-            content: "✦";
+            content: "";
             position: absolute;
-            right: 0;
-            bottom: -0.6em;
-            padding-left: 0.6em;
+            right: 0.3rem;
+            bottom: 0;
+            width: 0.38rem;
+            height: 0.38rem;
             background: var(--bg);
-            color: var(--brass);
-            font-size: 0.55em;
+            border: 1px solid color-mix(in srgb, var(--brass) 62%, var(--border));
+            transform: translateY(50%) rotate(45deg);
         }
 
         .section-intro {

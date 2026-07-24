@@ -2,7 +2,8 @@
 
 The visual journey follows the same screenshot-and-correctness-gate pattern as
 the `beshir-widgets` journey harness. It renders the homepage, projects, blog,
-and offline Tumblr preview across mobile/desktop and light/dark cells.
+archived summaries, and offline Tumblr preview across mobile/desktop and
+light/dark cells.
 
 ```sh
 npm run test:visual

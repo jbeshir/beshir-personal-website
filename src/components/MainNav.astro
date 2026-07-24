@@ -21,29 +21,22 @@ import avatar from '../assets/avatar.png'
   .logo img {
     margin-right: 1em;
     border-radius: 50%;
-    border: 2px solid var(--accent);
-    outline: 1px solid var(--brass);
-    outline-offset: 4px;
+    box-shadow:
+      0 0 0 2px var(--accent),
+      0 0 0 5px var(--bg-panel),
+      0 0 0 6px var(--brass);
     transition: transform 0.18s ease, box-shadow 0.18s ease;
-  }
-  .logo a {
-    position: relative;
-  }
-  .logo a::after {
-    content: "◆";
-    position: absolute;
-    left: 22px;
-    bottom: -5px;
-    color: var(--brass);
-    font-size: 0.55rem;
-    line-height: 1;
   }
   .logo a:hover h1 {
     color: var(--accent);
   }
   .logo a:hover img {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px -6px rgba(40, 20, 10, 0.4);
+    box-shadow:
+      0 0 0 2px var(--accent),
+      0 0 0 5px var(--bg-panel),
+      0 0 0 6px var(--brass),
+      0 8px 16px -6px rgba(40, 20, 10, 0.4);
   }
 </style>
 

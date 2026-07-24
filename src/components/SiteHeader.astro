@@ -13,7 +13,6 @@ import BotanicalRule from './BotanicalRule.astro';
     text-align: center;
     background: var(--bg-panel);
     border-bottom: 1px solid var(--border);
-    position: relative;
 
     @media (min-width: 600px) {
       flex-direction: row;
@@ -23,16 +22,8 @@ import BotanicalRule from './BotanicalRule.astro';
   }
 
   .header-flourish {
-    width: min(20rem, 70vw);
-    margin: -0.15rem auto 0.4rem;
-
-    @media (min-width: 600px) {
-      position: absolute;
-      width: 12rem;
-      right: 2rem;
-      bottom: -1.05rem;
-      margin: 0;
-    }
+    width: min(15rem, 60vw);
+    margin: -0.05rem auto -0.15rem;
   }
 
   .title-block {
@@ -64,9 +55,11 @@ import BotanicalRule from './BotanicalRule.astro';
     <MainNav />
     <a class="title-block" href={href}>
       <h1 class="title">{title}</h1>
+      {subtitle && (
+        <div class="header-flourish">
+          <BotanicalRule />
+        </div>
+      )}
       {subtitle && <div class="subtitle">{subtitle}</div>}
     </a>
-    <div class="header-flourish">
-      <BotanicalRule />
-    </div>
 </nav>
