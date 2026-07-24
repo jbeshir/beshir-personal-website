@@ -51,7 +51,7 @@ const embedOverrides = {
         .widget-card {
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 0;
             box-shadow: var(--shadow-1);
             padding: 2rem 2.5rem;
         }
@@ -113,7 +113,7 @@ const embedOverrides = {
             {widgets.map((w) => {
                 const embedUrl = embedOverrides[w.slug] ?? w.url;
                 return (
-                <div class="widget-card">
+                <div class="widget-card botanical-frame">
                     <h2 class="card-title"><a href={w.url}>{w.title}</a></h2>
                     <p class="card-desc">{w.description}</p>
                     <p class="view-link"><a href={embedUrl}>View full page →</a></p>

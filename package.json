@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "start": "astro dev",
-    "build": "astro build"
+    "build": "astro build",
+    "test:visual": "npm run build && node tumblr-theme/preview/render.mjs && node scripts/visual-journey.mjs"
   },
   "devDependencies": {
     "@astrojs/react": "^5.0.7",
     "astro": "^6.4.8",
+    "playwright": "1.61.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "sass": "^1.69.0"

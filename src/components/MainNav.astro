@@ -21,7 +21,10 @@ import avatar from '../assets/avatar.png'
   .logo img {
     margin-right: 1em;
     border-radius: 50%;
-    border: 2px solid var(--accent);
+    box-shadow:
+      0 0 0 2px var(--accent),
+      0 0 0 5px var(--bg-panel),
+      0 0 0 6px var(--brass);
     transition: transform 0.18s ease, box-shadow 0.18s ease;
   }
   .logo a:hover h1 {
@@ -29,7 +32,11 @@ import avatar from '../assets/avatar.png'
   }
   .logo a:hover img {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px -6px rgba(40, 20, 10, 0.4);
+    box-shadow:
+      0 0 0 2px var(--accent),
+      0 0 0 5px var(--bg-panel),
+      0 0 0 6px var(--brass),
+      0 8px 16px -6px rgba(40, 20, 10, 0.4);
   }
 </style>
 

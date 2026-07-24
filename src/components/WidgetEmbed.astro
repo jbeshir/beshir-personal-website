@@ -3,7 +3,7 @@ const { slug, height = 600, title, src } = Astro.props;
 const url = src ?? `https://${slug}.widgets.beshir.org`;
 const name = title ?? slug;
 ---
-<div class="widget-frame" style={`min-height:${height}px`}>
+<div class="widget-frame botanical-frame" style={`min-height:${height}px`}>
   <div class="widget-placeholder">
     <span class="widget-icon">
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -29,7 +29,7 @@ const name = title ?? slug;
   .widget-frame {
     position: relative;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 0;
     overflow: hidden;
     background: var(--bg-panel);
   }

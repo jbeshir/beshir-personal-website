@@ -74,7 +74,19 @@ for (const [slug, pair] of Object.entries(sources)) {
             margin-top: 2.5rem;
             margin-bottom: 0.75rem;
             padding-bottom: 0.25rem;
-            border-bottom: 2px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            right: 6px;
+            top: calc(100% - 3px);
+            width: 7px;
+            height: 7px;
+            background: color-mix(in srgb, var(--brass) 50%, var(--border));
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
         }
 
         .section-intro {
@@ -105,7 +117,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         .widget-card {
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 0;
             box-shadow: var(--shadow-1);
             overflow: hidden;
             display: flex;
@@ -188,15 +200,23 @@ for (const [slug, pair] of Object.entries(sources)) {
             margin: 0;
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 0;
             box-shadow: var(--shadow-1);
-            padding: 0.5rem 1.5rem;
+            padding: 0 1.5rem;
         }
 
         .mcp-list li {
-            padding: 0.75rem 0;
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            column-gap: 0.35em;
+            padding: 0.8rem 0;
             line-height: 1.5;
             border-bottom: 1px solid var(--border);
+        }
+
+        .mcp-list .description::before {
+            content: "—";
+            margin-right: 0.35em;
         }
 
         .mcp-list li:last-child {
@@ -219,6 +239,18 @@ for (const [slug, pair] of Object.entries(sources)) {
 
             .widget-body {
                 padding: 1.25rem 1.25rem;
+            }
+
+            .mcp-list {
+                padding-inline: 1.25rem;
+            }
+
+            .mcp-list li {
+                display: block;
+            }
+
+            .mcp-list .description::before {
+                margin-left: 0.35em;
             }
         }
     </style>
@@ -251,7 +283,7 @@ for (const [slug, pair] of Object.entries(sources)) {
 
         <div class="widget-grid">
             {widgets.map((w) => (
-                <a class="widget-card" href={w.url}>
+                <a class="widget-card botanical-frame" href={w.url}>
                     <div class="widget-img">
                         <picture>
                             <source srcset={imgMap[w.image].dark.src} media="(prefers-color-scheme: dark)" />
@@ -271,7 +303,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         <p class="section-intro">A handful of small MCP servers, mostly so an assistant can read from services I use. <a href="https://github.com/jbeshir/mcp-servers">See the repo</a>.</p>
         <ul class="mcp-list">
             {mcpServers.map((s) => (
-                <li><strong>{s.name}</strong> — {s.blurb}</li>
+                <li><strong>{s.name}</strong><span class="description">{s.blurb}</span></li>
             ))}
         </ul>
     </main>

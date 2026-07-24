@@ -4,6 +4,7 @@ import AnalyticsBody from '../components/AnalyticsBody.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
 import {Image} from "astro:assets";
 import avatar from '../assets/avatar.png'
+import BotanicalRule from '../components/BotanicalRule.astro';
 import '@fontsource/schibsted-grotesk/400.css';
 import '@fontsource/schibsted-grotesk/400-italic.css';
 import '@fontsource/schibsted-grotesk/700.css';
@@ -27,11 +28,13 @@ import '@fontsource/ibm-plex-sans-jp/700.css';
         }
 
         main {
+            position: relative;
             max-width: 40rem;
             width: 100%;
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 0;
+            overflow: hidden;
             padding: 2rem 2.5rem 2.5rem;
             box-shadow: var(--shadow-2);
         }
@@ -53,8 +56,20 @@ import '@fontsource/ibm-plex-sans-jp/700.css';
             font-size: 1.4rem;
             letter-spacing: 0.01em;
             margin-top: 1.5rem;
-            padding-bottom: 0.25rem;
-            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            right: 6px;
+            top: calc(100% - 3px);
+            width: 7px;
+            height: 7px;
+            background: color-mix(in srgb, var(--brass) 50%, var(--border));
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
         }
 
         main > h2:first-of-type {
@@ -76,11 +91,12 @@ import '@fontsource/ibm-plex-sans-jp/700.css';
 
         .row {
             display: block;
+            position: relative;
             min-height: 2.75rem;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 0.5rem 0.75rem;
+            background: color-mix(in srgb, var(--bg) 78%, transparent);
+            border-left: 2px solid var(--border);
+            border-bottom: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+            padding: 0.55rem 2.25rem 0.6rem 0.85rem;
             color: var(--fg);
             text-decoration: none;
             text-wrap: pretty;
@@ -88,8 +104,24 @@ import '@fontsource/ibm-plex-sans-jp/700.css';
         }
 
         .row:hover {
-            border-color: var(--accent);
+            border-left-color: var(--accent);
+            background: color-mix(in srgb, var(--accent) 5%, var(--bg));
             text-decoration: none;
+        }
+
+        .row::after {
+            content: "◇";
+            position: absolute;
+            right: 0.85rem;
+            top: 50%;
+            color: var(--botanical);
+            transform: translateY(-50%);
+            transition: color 0.15s ease, transform 0.15s ease;
+        }
+
+        .row:hover::after {
+            color: var(--accent);
+            transform: translate(0.2rem, -50%);
         }
 
         .row .name {
@@ -125,8 +157,22 @@ import '@fontsource/ibm-plex-sans-jp/700.css';
             width: 2.4em;
             height: 2.4em;
             border-radius: 50%;
-            border: 3px solid var(--accent);
-            box-shadow: 0 6px 20px -6px rgba(40, 20, 10, 0.22);
+            box-shadow:
+                0 0 0 3px var(--accent),
+                0 0 0 8px var(--bg),
+                0 0 0 9px var(--brass),
+                0 8px 20px -8px rgba(40, 20, 10, 0.3);
+        }
+
+        .identity-rule {
+            width: min(24rem, 82vw);
+            margin: -0.8rem auto -0.2rem;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 1.75rem 1.5rem 2rem;
+            }
         }
 
         /* De-emphasized blocks */
@@ -185,8 +231,11 @@ import '@fontsource/ibm-plex-sans-jp/700.css';
             <Image width="240" height="240" src={avatar} alt="avatar" />
             <h1>JBeshir</h1>
         </div>
+        <div class="identity-rule">
+            <BotanicalRule />
+        </div>
     </header>
-    <main>
+    <main class="botanical-frame">
         <p class="bio">Software engineer and Giving What We Can member.</p>
 
         <h2>Writing</h2>
