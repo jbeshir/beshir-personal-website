@@ -11,6 +11,7 @@ const tumblrRoot = resolve(root, 'tumblr-theme/preview/dist');
 const surfaces = [
   { name: 'home', root: siteRoot, path: '/' },
   { name: 'projects', root: siteRoot, path: '/projects/' },
+  { name: 'projects-hover', root: siteRoot, path: '/projects/', hover: '.featured-card' },
   { name: 'blog', root: siteRoot, path: '/blog/' },
   { name: 'summaries', root: siteRoot, path: '/summaries/' },
   { name: 'tumblr', root: tumblrRoot, path: '/' },
@@ -96,6 +97,7 @@ try {
         await page.addStyleTag({
           content: '*,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important}',
         });
+        if (surface.hover) await page.hover(surface.hover);
 
         const overflow = await page.evaluate(() => ({
           clientWidth: document.documentElement.clientWidth,

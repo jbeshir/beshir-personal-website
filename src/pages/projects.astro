@@ -113,7 +113,6 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         .widget-card {
-            position: relative;
             background: var(--bg-panel);
             border: 1px solid var(--border);
             border-radius: 0;
@@ -126,15 +125,6 @@ for (const [slug, pair] of Object.entries(sources)) {
             color: var(--fg);
             text-decoration: none;
             transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-        }
-
-        .widget-card::after {
-            content: "";
-            position: absolute;
-            inset: 6px;
-            border: 1px solid color-mix(in srgb, var(--border) 42%, transparent);
-            clip-path: var(--clip-frame);
-            pointer-events: none;
         }
 
         .widget-card:hover {

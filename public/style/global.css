@@ -28,7 +28,7 @@
   --botanical: #66745e;
   --shadow-1: 0 6px 24px -12px rgba(40, 20, 10, 0.18);
   --shadow-2: 0 10px 40px -16px rgba(40, 20, 10, 0.25);
-  --clip-frame: polygon(0 10px, 10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px));
+  --clip-frame: polygon(0 6px, 6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px));
 }
 
 @media (prefers-color-scheme: dark) {
