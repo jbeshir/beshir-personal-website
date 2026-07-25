@@ -75,13 +75,13 @@ body {
 }
 
 .botanical-frame::before {
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: -1px;
 }
 
 .botanical-frame::after {
-  right: 0;
-  bottom: 0;
+  right: -1px;
+  bottom: -1px;
 }
 
 /* A faint drafting lattice gives the botanical geometry a constructed feel. */
