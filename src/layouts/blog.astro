@@ -51,7 +51,7 @@ const { content } = Astro.props;
         margin-inline: auto;
         background: var(--bg-panel);
         border: 1px solid var(--border);
-        border-radius: 16px;
+        border-radius: 0;
         box-shadow: var(--shadow-2);
         padding: 2rem 2.5rem;
 
@@ -91,7 +91,7 @@ const { content } = Astro.props;
         :global(pre) {
           background: var(--bg);
           border: 1px solid var(--border);
-          border-radius: 6px;
+          border-radius: 0;
           padding: 1rem 1.25rem;
           overflow-x: auto;
           line-height: 1.55;
@@ -151,7 +151,7 @@ const { content } = Astro.props;
 <main class="wrapper">
     <h2 class="title">{content.title}</h2>
     <TopicTags categories={content.categories} domain={content.domain} />
-    <article class="article">
+    <article class="article botanical-frame">
         <slot />
     </article>
     <footer class="footer">
