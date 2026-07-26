@@ -1,5 +1,5 @@
 ---
-const { categories, domain } = Astro.props;
+const { categories, domain, linkable = true } = Astro.props;
 const cats = Array.isArray(categories) ? categories : [];
 const chips = cats.map((c) => ({
   slug: String(c).toLowerCase().replaceAll('_', '-'),
@@ -11,10 +11,12 @@ const domainLabel = domain ? String(domain).charAt(0).toUpperCase() + String(dom
 ---
 {(domain || chips.length > 0) && (
   <ul class="topics">
-    {domain && <li><a class="domain-badge" href={`/blog/${domainSlug}/`}>{domainLabel}</a></li>}
-    {chips.map((c) => (
-      <li><a class="topic-chip" href={`/blog/topics/${c.slug}/`}>{c.label}</a></li>
-    ))}
+    {domain && (linkable
+      ? <li><a class="domain-badge" href={`/blog/${domainSlug}/`}>{domainLabel}</a></li>
+      : <li><span class="domain-badge">{domainLabel}</span></li>)}
+    {chips.map((c) => (linkable
+      ? <li><a class="topic-chip" href={`/blog/topics/${c.slug}/`}>{c.label}</a></li>
+      : <li><span class="topic-chip">{c.label}</span></li>))}
   </ul>
 )}
 <style lang="scss">
