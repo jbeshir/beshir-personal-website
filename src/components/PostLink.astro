@@ -15,7 +15,7 @@ return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove ev
     align-items: center;
     background: var(--bg-panel);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 0;
     box-shadow: var(--shadow-1);
     padding: 1.75rem 2rem;
     margin: 1.5rem 0;
@@ -37,12 +37,14 @@ return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove ev
   }
 
   .date {
+    font-family: var(--font-sans);
+    font-size: max(0.9rem, 14px);
     font-style: italic;
     color: var(--muted);
   }
 
   .description {
-    font-size: 1.25em;
+    font-size: 1em;
     color: var(--fg);
     margin-top: 0.5em;
   }
@@ -56,8 +58,6 @@ return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove ev
     margin-top: 0;
     margin-bottom: 0;
     color: var(--accent);
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
   }
 
   time {
@@ -68,7 +68,7 @@ return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove ev
 
 </style>
 
-<div class="post-entry">
+<div class="post-entry botanical-frame">
 <a class="post" href={post.url}>
 
     <div class="data">

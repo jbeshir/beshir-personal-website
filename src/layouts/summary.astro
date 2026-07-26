@@ -2,10 +2,12 @@
 import MainHead from '../components/MainHead.astro';
 import SummaryNav from '../components/SummaryNav.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
-import '@fontsource/spectral/400.css';
-import '@fontsource/spectral/400-italic.css';
-import '@fontsource/spectral/700.css';
-import '@fontsource/spectral/700-italic.css';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/400-italic.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/schibsted-grotesk/700-italic.css';
+import '@fontsource/ibm-plex-sans-jp/400.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 const { content } = Astro.props;
 ---
@@ -16,7 +18,7 @@ const { content } = Astro.props;
     <link rel="stylesheet" href="/style/summaries.css">
     <style lang="scss">
       body {
-        font-family: 'Spectral', serif;
+        font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
       }
 
       .title {
@@ -74,10 +76,25 @@ const { content } = Astro.props;
       }
 
       .posts {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.6rem 1.5rem;
         letter-spacing: 0.05em;
         text-transform: uppercase;
+        font-family: var(--font-sans);
+        font-size: max(0.85rem, 14px);
+        color: var(--accent-text);
+      }
+
+      /* QW8: trim dark-mode halation on long-form serif body (keep headings as-is). */
+      @media (prefers-color-scheme: dark) {
+        .article :global(p),
+        .article :global(li) {
+          color: #e0dcd7;
+          letter-spacing: 0.012em;
+        }
       }
 
       .footer {

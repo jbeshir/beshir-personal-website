@@ -2,9 +2,11 @@
 import MainHead from '../../components/MainHead.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import AnalyticsFooter from '../../components/AnalyticsFooter.astro';
-import '@fontsource/spectral/400.css';
-import '@fontsource/spectral/400-italic.css';
-import '@fontsource/spectral/700.css';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/400-italic.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/ibm-plex-sans-jp/400.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 ---
 <!doctype html>
 <html lang="en">
@@ -20,7 +22,7 @@ import '@fontsource/spectral/700.css';
         }
 
         h1 {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 2.2rem;
@@ -31,11 +33,12 @@ import '@fontsource/spectral/700.css';
         .updated {
             color: var(--muted);
             margin-bottom: 2.25rem;
-            font-size: 0.95rem;
+            font-family: var(--font-sans);
+            font-size: max(0.95rem, 14px);
         }
 
         h2 {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.4rem;
@@ -62,11 +65,7 @@ import '@fontsource/spectral/700.css';
         }
 
         a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
+            color: var(--accent-text);
             text-decoration: underline;
             text-underline-offset: 2px;
         }

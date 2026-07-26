@@ -14,6 +14,13 @@
     "embedHeight": 760
   },
   {
+    "slug": "pennsic-mapper",
+    "title": "Pennsic Mapper",
+    "description": "Browse the Pennsic 53 (2026) camp map and build a shareable personal map of coloured, labelled pins, reached by a link.",
+    "url": "https://pennsic-mapper.widgets.beshir.org",
+    "embedHeight": 760
+  },
+  {
     "slug": "function-plotter",
     "title": "Function Plotter",
     "description": "Plot a user-supplied function of x as an SVG curve.",

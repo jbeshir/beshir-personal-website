@@ -2,19 +2,28 @@
 import MainHead from '../components/MainHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import AnalyticsFooter from '../components/AnalyticsFooter.astro';
+import FeaturedCard from '../components/FeaturedCard.astro';
+import FeaturedMediaCard from '../components/FeaturedMediaCard.astro';
 import { getImage } from "astro:assets";
 import jvtLight from '../assets/projects/japanese-verb-tower-light.jpg';
 import jvtDark from '../assets/projects/japanese-verb-tower-dark.jpg';
 import pennsicLight from '../assets/projects/pennsic-planner-light.jpg';
 import pennsicDark from '../assets/projects/pennsic-planner-dark.jpg';
+import pennsicMapperLight from '../assets/projects/pennsic-mapper-light.jpg';
+import pennsicMapperDark from '../assets/projects/pennsic-mapper-dark.jpg';
+import glowficlogLight from '../assets/projects/glowficlog-light.jpg';
+import glowficlogDark from '../assets/projects/glowficlog-dark.jpg';
 import { widgets, mcpServers } from '../data/projects.js';
-import '@fontsource/spectral/400.css';
-import '@fontsource/spectral/400-italic.css';
-import '@fontsource/spectral/700.css';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/400-italic.css';
+import '@fontsource/schibsted-grotesk/700.css';
+import '@fontsource/ibm-plex-sans-jp/400.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 const sources = {
     'japanese-verb-tower': { light: jvtLight, dark: jvtDark },
     'pennsic-planner': { light: pennsicLight, dark: pennsicDark },
+    'pennsic-mapper': { light: pennsicMapperLight, dark: pennsicMapperDark },
 };
 
 const imgMap = {};
@@ -42,7 +51,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         h1 {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 2.2rem;
@@ -57,7 +66,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         h2 {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.5rem;
@@ -65,7 +74,19 @@ for (const [slug, pair] of Object.entries(sources)) {
             margin-top: 2.5rem;
             margin-bottom: 0.75rem;
             padding-bottom: 0.25rem;
-            border-bottom: 2px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            right: 6px;
+            top: calc(100% - 3px);
+            width: 7px;
+            height: 7px;
+            background: color-mix(in srgb, var(--brass) 50%, var(--border));
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
         }
 
         .section-intro {
@@ -74,33 +95,8 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         /* Featured card */
-        .featured-card {
-            display: block;
-            background: var(--bg-panel);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: var(--shadow-1);
-            padding: 2rem 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--fg);
-            text-decoration: none;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-        }
-
-        .featured-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-2);
-            border-color: var(--accent);
-            text-decoration: none;
-        }
-
-        .featured-card:hover .card-title {
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
         .card-title {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.6rem;
@@ -121,9 +117,9 @@ for (const [slug, pair] of Object.entries(sources)) {
         .widget-card {
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 0;
             box-shadow: var(--shadow-1);
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             flex-direction: row;
             gap: 0;
@@ -171,7 +167,7 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         .widget-title {
-            font-family: 'Spectral', serif;
+            font-family: 'Schibsted Grotesk', 'IBM Plex Sans JP', sans-serif;
             font-weight: 700;
             color: var(--accent);
             font-size: 1.15rem;
@@ -179,17 +175,21 @@ for (const [slug, pair] of Object.entries(sources)) {
         }
 
         .more-link {
-            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            font-size: max(0.9rem, 14px);
             color: var(--muted);
             margin-top: 0.5rem;
         }
 
         .more-link a {
-            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            color: var(--accent-text);
         }
 
         .more-link a:hover {
-            color: var(--accent);
+            color: var(--accent-text);
             text-decoration: underline;
             text-underline-offset: 2px;
         }
@@ -200,15 +200,23 @@ for (const [slug, pair] of Object.entries(sources)) {
             margin: 0;
             background: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 0;
             box-shadow: var(--shadow-1);
-            padding: 0.5rem 1.5rem;
+            padding: 0 1.5rem;
         }
 
         .mcp-list li {
-            padding: 0.75rem 0;
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            column-gap: 0.35em;
+            padding: 0.8rem 0;
             line-height: 1.5;
             border-bottom: 1px solid var(--border);
+        }
+
+        .mcp-list .description::before {
+            content: "—";
+            margin-right: 0.35em;
         }
 
         .mcp-list li:last-child {
@@ -218,10 +226,6 @@ for (const [slug, pair] of Object.entries(sources)) {
         @media (max-width: 600px) {
             main {
                 padding: 1.5rem 1rem 3rem;
-            }
-
-            .featured-card {
-                padding: 1.5rem 1.5rem;
             }
 
             .widget-card {
@@ -236,6 +240,18 @@ for (const [slug, pair] of Object.entries(sources)) {
             .widget-body {
                 padding: 1.25rem 1.25rem;
             }
+
+            .mcp-list {
+                padding-inline: 1.25rem;
+            }
+
+            .mcp-list li {
+                display: block;
+            }
+
+            .mcp-list .description::before {
+                margin-left: 0.35em;
+            }
         }
     </style>
 </head>
@@ -246,17 +262,28 @@ for (const [slug, pair] of Object.entries(sources)) {
             <p>Mostly small tools, made for my own use and shared in case they're useful.</p>
         </div>
 
-        <a class="featured-card" href="https://github.com/jbeshir/demesne">
+        <FeaturedCard href="https://github.com/jbeshir/demesne">
             <h3 class="card-title">demesne</h3>
             <p>A sandbox for running containerised local AI agent pipelines and ad-hoc code with controlled network access, exposed over MCP. I built it to run my own agent workflows to accomplish larger tasks safely and to higher quality.</p>
-        </a>
+        </FeaturedCard>
+
+        <FeaturedMediaCard
+            href="https://github.com/jbeshir/glowficlog"
+            lightSrc={glowficlogLight}
+            darkSrc={glowficlogDark}
+            imageWidth={520}
+            imageAlt="The glowficlog reader showing a condensed glowfic thread"
+        >
+            <h3 class="card-title">glowficlog</h3>
+            <p>A browser extension that reformats glowfic.com thread pages into a compact, high-density reader, collapsing endless one-post-per-line forum formatting into a continuous, novel-like column with alternating gutter icons.</p>
+        </FeaturedMediaCard>
 
         <h2>Widgets</h2>
         <p class="section-intro">Small embeddable widgets, each deployed on its own subdomain under widgets.beshir.org. <a href="https://github.com/jbeshir/beshir-widgets">See the repo</a>.</p>
 
         <div class="widget-grid">
             {widgets.map((w) => (
-                <a class="widget-card" href={w.url}>
+                <a class="widget-card botanical-frame" href={w.url}>
                     <div class="widget-img">
                         <picture>
                             <source srcset={imgMap[w.image].dark.src} media="(prefers-color-scheme: dark)" />
@@ -274,9 +301,9 @@ for (const [slug, pair] of Object.entries(sources)) {
 
         <h2>MCP servers</h2>
         <p class="section-intro">A handful of small MCP servers, mostly so an assistant can read from services I use. <a href="https://github.com/jbeshir/mcp-servers">See the repo</a>.</p>
-        <ul class="mcp-list">
+        <ul class="mcp-list botanical-frame">
             {mcpServers.map((s) => (
-                <li><strong>{s.name}</strong> — {s.blurb}</li>
+                <li><strong>{s.name}</strong><span class="description">{s.blurb}</span></li>
             ))}
         </ul>
     </main>
