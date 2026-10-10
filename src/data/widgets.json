@@ -21,6 +21,13 @@
     "embedHeight": 760
   },
   {
+    "slug": "heraldry-builder",
+    "title": "Heraldry Builder",
+    "description": "Design rule-checked heraldic arms from a fixed menu of tinctures, ordinaries and charges, read the auto-generated blazon, and register them in a searchable community armorial.",
+    "url": "https://heraldry-builder.widgets.beshir.org",
+    "embedHeight": 900
+  },
+  {
     "slug": "function-plotter",
     "title": "Function Plotter",
     "description": "Plot a user-supplied function of x as an SVG curve.",
